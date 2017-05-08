@@ -1,0 +1,130 @@
+/* Feuille de style spécifique IE 6 qui fait suer
+ */
+
+body { 
+  /* Hack pour le Hover sur les autres balises que A */
+  behavior: url("csshover3.htc");
+  /* Hack pour ne pas que ça scintille avec l'émulation de position:fixed */
+  background: url(null) fixed;
+}
+
+/*
+  // Hack pour la transparence (NB: ça marche pas :-/)
+  border-color: pink;
+  filter: chroma(color=pink);
+  
+  // Hack pour émuler position:fixed (ici dans le coin bas droit)
+  position: absolute;
+  right: auto; bottom: auto;
+  left: expression( ( -20 - fixme.offsetWidth + ( document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth ) + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
+  top: expression( ( -10 - fixme.offsetHeight + ( document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
+*/
+
+#logconsole {
+  position: absolute;
+  top: expression((25 + (ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop)) + 'px');
+  left: expression((-320 + (document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth) + (ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft)) + 'px');
+}
+
+#help {
+  position: absolute;
+  top: expression((25 + (ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop)) + 'px');
+  left: expression((-520 + (document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth) + (ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft)) + 'px');
+  width: 350px;
+}
+
+#bossframe {
+  position: absolute;
+  top: expression((ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop) + 'px');
+  left: 0px;
+  width: 100%;
+  height: 2048px;
+}
+
+#tabs {
+  position: absolute;
+  top: expression((-28 - tabs.offsetHeight + (document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight) + (ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop)) + 'px');
+  left: 10px; /*expression((-20 - tabs.offsetWidth + (document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth) + (ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft)) + 'px');*/
+}
+
+#popup {
+  position: absolute;
+  top: expression((30 + (ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop)) + 'px');
+  left: 10px;
+}
+
+#pinnipede {
+  position: absolute;
+  top: expression(25 + (ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop) + 'px');
+  left: 0px;
+  width: 100%;
+  height: expression((-88 + (document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight) + (ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop)) + 'px');
+  background: #FDB;
+}
+
+#palmipede {
+  position: absolute;
+  top: expression((0 - palmipede.offsetHeight + (document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight) + (ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop)) + 'px');
+  left: 0px;
+  width: 100%;
+}
+
+.panel, .config-panel {
+  position: absolute;
+  top: expression((25 + (ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop)) + 'px');
+  left: 75px;
+  /* z-index: 100!important; */
+}
+
+.tab {
+  border-top: 0;
+  padding-top: 2px;
+}
+.tab-hidden {
+  border-top: 2px solid #000;
+  padding-top: 0px;
+}
+/*
+.pseudotab {
+  border-top: 2px solid #000;
+  padding-top: 0px;
+}
+.pseudotab-active {
+  border-top: 0;
+  padding-top: 2px;
+}*/
+
+/*
+#pinnipede DIV {
+  border-top: 1px solid pink;
+  border-left: 3px solid pink;
+  border-right: 1px solid pink;
+  border-bottom: 1px solid pink;
+  border-color: pink;
+  filter: chroma(color=pink);
+  border-width: 1px 1px 1px 3px;
+}
+*/
+.clockref {
+  border: 1px solid pink;
+  filter: chroma(color=pink);
+}
+SPAN.mypost {
+  border: 1px solid pink;
+  filter: chroma(color=pink);
+}
+
+#newboard {
+  position: absolute;
+  top: expression((-28 - newboard.offsetHeight + (document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight) + (ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop)) + 'px');
+}
+
+#totozpanel {
+  position: absolute;
+  top: expression((-28 - totozpanel.offsetHeight + (document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight) + (ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop)) + 'px');
+  left: expression((-20 - totozpanel.offsetWidth + (document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth) + (ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft)) + 'px');
+}
+#totoz-list {
+  height: 500px;
+  width: 400px;
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Poster un fichier</title>
+</head>
+
+<body>
+    <form action="attach.php" id="attach-form" method="post" enctype="multipart/form-data">
+      <label for="attach_file">Poster le fichier&nbsp;:</label>
+      <input id="attach_file" name="attach_file" type="file" />
+      <input type="submit" name="submit" value="Envoyer" />
+      <button onclick="parent.closePanel('attach')">Annuler</button>
+    </form>
+</body>
+
+</html>

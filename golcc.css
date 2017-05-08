@@ -1,0 +1,532 @@
+/* OnlineCoinCoin stylesheet "ala Google"
+ */
+
+HTML, BODY {
+  font-family: arial, sans-serif;
+  font-size: 90%;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+  color: #000;
+}
+
+A {
+  color: #2a5db0;
+}
+
+INPUT, SELECT {
+  margin: 1px; 
+  border-top: 1px solid #666666;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  font-family: arial, sans-serif;
+  font-size: 100%;
+}
+INPUT:focus, SELECT:focus {
+  margin: 0;
+  border:2px solid #6694e3;
+}
+
+/* Le panneau d'aide */
+#help {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background-color: #EAE8E4;
+  border: 2px solid #6D6D6D;
+  opacity: 0.9;
+  z-index: 95;
+  display: none;
+}
+
+/* le mode panic: plein écran */
+#bossframe {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  position: fixed;
+  background-repeat: no-repeat;
+  background-color: #FFF;
+  z-index: 2000;
+  display: none;
+  color: #000;
+}
+
+/* La barre d'outils */
+#toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 23px;
+  z-index: 50;
+  border-bottom: 1px solid #ccc;
+  vertical-align: middle;
+}
+#toolbar-icons {
+  float: right;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+#toolbar-icons IMG {
+  border: 1px solid transparent;
+  padding: 2px;
+  vertical-align: middle;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+#toolbar-icons IMG:hover {
+  background: #e0ecff;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+#toolbar-title {
+  float: left;
+}
+#toolbar-title UL {
+  margin: 0;
+  padding-top: 3px;
+  padding-left: 5px;
+  vertical-align: middle;
+  font-weight: bold;
+}
+#toolbar-title LI {
+  display: inline;
+  list-style-type: none;
+  padding-left: 6px;
+  vertical-align: middle;
+}
+#toolbar-title A { font-weight: normal; }
+#toolbar-log {
+  float: right;
+  vertical-align: middle;
+}
+
+img.totoz {
+  position: absolute;
+  z-index: 99;
+}
+.totoz {
+  color: #282;
+}
+.totoz:hover {
+  color: #800;
+  cursor: pointer;
+}
+
+/* Styles des onglets */
+#tabs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-left: 5px;
+  margin-top: 80px;
+  width: 165px;
+  z-index: 30;
+}
+#tabs DIV {
+  cursor: default;
+}
+#tabs-boards {
+  padding-top: 20px;
+  text-align: left;
+}
+.tab {
+  margin: 2px;
+  padding-left: 3px;
+  font-weight: bold;
+  color: #2a5db0;
+  border-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+}
+.tab IMG {
+  vertical-align: middle;
+  border: 0;
+  padding-right: 2px;
+}
+.tab-name {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.tab-notif {
+  color: #A00;
+  padding-left: 3px;
+  font-weight: bold;
+}
+.tab-hidden {
+  background-color: #fff!important;
+  font-weight: normal;
+}
+.tabs-actions {
+  text-align: right;
+  padding-right: 5px;
+}
+.tabs-actions IMG {
+  border: 1px solid transparent;
+  padding: 2px;
+  vertical-align: middle;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.tabs-actions IMG:HOVER {
+  background: #e0ecff;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+#tabs-filters {
+  margin: 6px 6px 2px 2px;
+  border: 2px solid #e0ecff;
+  background: #e0ecff;
+  padding: 0;
+  text-align: left;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+#tabs-filters:before {content: " Filtres";}
+
+.filter {
+  text-decoration: underline;
+  cursor: pointer!important;
+  color: #2a5db0;
+  background: #fff;
+  padding: 2px 4px 2px 4px;
+}
+.filter-active {
+  font-weight: bold;
+}
+
+#popup {
+  border: 4px solid #fad163;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  position: fixed;
+  top: 66px;
+  left: 225px;
+  right: 25px;
+  background-color: #fff1a8;
+  color: #444444;
+  padding: 2px 8px 2px 4px;
+  z-index: 75;
+  display: none;
+}
+
+#pinnipede {
+  border: 4px solid #6694e3;
+  position: fixed;
+  top: 80px;
+  left: 168px;
+  right: 5px;
+  bottom: 5px;
+  background: #e0ecff;
+  color: #444444;
+  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+#pinnipede A, #popup A {
+  text-decoration: none;
+}
+#pinnipede DIV {
+  border-left: 4px solid transparent;
+  border-bottom: 1px solid #ccc;
+  clear: both;
+}
+DIV.post {
+  margin-left: 20px;
+  padding: 2px 4px 2px 12px;
+  background-color: #EFEFEF!important;
+  opacity: 0.8;
+  border: none!important;
+  min-height: 16px;
+}
+SPAN.clock {
+  cursor: default;
+  display: block;
+  float: left;
+  width: 70px;
+}
+.clockref {
+  color: #336;
+  border: 1px solid transparent;
+  cursor: default;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+SPAN.login {
+  display: block;
+  float: left;
+  width: 125px;
+  color: #833;
+}
+SPAN.ua {
+  font-style: italic;
+  display: block;
+  float: left;
+  width: 125px;
+  color: #533;
+}
+DIV.newpost {
+  color: #000;
+  font-weight: bold;
+}
+.newpost .post {
+  background-color: #fff;
+}
+.newpost .message {
+  font-weight: normal;
+}
+SPAN.bigorno {
+  font-weight: bold;
+  color: #B2B;
+}
+DIV.bigorno {
+  background-image: url('img/golcc-bigo.png')!important;
+  background-repeat: no-repeat;
+  background-position: 0px 1px;
+}
+SPAN.canard {
+  font-weight: bold;
+  color: #B2B;
+  cursor: crosshair;
+}
+DIV.answer {
+  background-image: url('img/golcc-star-b.png')!important;
+  background-repeat: no-repeat;
+  background-position: 0px 1px;
+}
+SPAN.mypost {
+  color: #922;
+}
+DIV.mypost {
+  background-image: url('img/golcc-star.png')!important;
+  background-repeat: no-repeat;
+  background-position: 0px 1px;
+}
+DIV.hilight DIV {
+  background-color: #FFFFCC!important;
+}
+SPAN.hilight {
+  border: 1px solid #FFFFCC!important;
+  background-color: #FFFFCC!important;
+}
+
+DIV.flash DIV {
+  background-color: #FFF!important;
+  color: #000!important;
+}
+
+.plonk {
+  color: #777!important;
+  font-style: italic!important;
+}
+.plonk .post {
+  background-color: #ddd!important;
+}
+
+#palmipede {
+  position: fixed;
+  top: 25px;
+  left: 12px;
+  right: 0;
+  height: 42px;
+  background: url('img/golcc.png') no-repeat 10px 2px;
+  padding: 10px 10px 0 130px;
+}
+#palmipede FORM, #palmipede FORM * {
+  vertical-align: middle;
+}
+#palmipede IMG {
+  padding: 2px;
+}
+#palmi-message {
+  color: #000000;
+}
+
+#post-form {
+  float: left;
+  margin: 0;
+  padding-top: 2px;
+  display: block;
+  vertical-align: middle;
+}
+#totoz-form {
+  float: right;
+  display: block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.panel-tabs {
+	background-color: #fff;
+	border-bottom: 1px solid #666;
+	height: 55px;
+}
+.panel-tabs .panel-tab {
+	font-size: 90%;
+	float: left;
+	text-align: center;
+	padding: 2px 5px 2px 5px;
+	margin-left: 2px;
+	border: none;
+	background-color: transparent;
+	cursor: default;
+}
+.panel-tab:hover {
+	background-color: #e0ecff;
+}
+.panel-tab IMG, .panel-tab IMG:hover {
+	border: 0!important;
+	padding: 0!important;
+	margin: 2px!important;
+	background-color: transparent!important;
+}
+.tab-active {
+	background-color: #bcf!important;
+}
+
+.panel, .config-panel {
+  position: fixed;
+  top: 25px;
+  right: 0px;
+  padding: 0;
+  z-index: 80;
+  background-color: #fff7d7;
+  border: 4px solid #fad163;
+  width: 500px;
+}
+.panel-header {
+  background-color: #e0ecff;
+  padding-left: 5px;
+  vertical-align: middle;
+  font-weight: bold;
+}
+.config-panel .panel-header {
+  background-color: #fad163;
+}
+.config-panel IMG, .panel-header IMG {
+  border: 1px solid transparent;
+  padding: 2px;
+  vertical-align: middle;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.config-panel IMG:hover, .panel-header IMG:hover {
+  border: 1px solid #fff;
+  background-color: #6694e3;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.subpanel {
+  max-height: 420px;
+  overflow: auto;
+}
+td.subpanel {
+  text-align: left;
+}
+td.panel-board {
+  color: #000;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-weight: bolder;
+  z-index: 90;
+}
+td.cstate {
+  text-align: center;
+  color: #0A246A;
+  width: 65px;
+}
+td.cinfo {
+  text-align: right;
+}
+
+#newboard {
+  position: fixed;
+  top: 180px;
+  left: 165px;
+  right: auto;
+  background-color: #fff;
+  border: 4px solid #6694e3;
+  max-height: 400px;
+  overflow: auto;
+  z-index: 99;
+}
+#newboard LI {
+  padding: 2px;
+  cursor: pointer;
+  list-style-image: url('img/golcc-bullet-b.png');
+}
+#newboard LI:hover {
+  background-color: #FFFFCC;
+  list-style-image: url('img/golcc-bullet.png');
+}
+
+#totozpanel {
+  position: fixed;
+  right: 0px;
+  top: 60px;
+  border: 4px solid #6694e3;
+  background-color: #fff;
+  z-index: 99;
+}
+#totoz-list {
+  max-height: 500px;
+  max-width: 430px;
+  overflow: auto;
+}
+#totoz-list TR:hover {
+  background-color: #FFFFCC;
+}
+#totoz-list TD {
+  text-align: center;
+}
+
+.sndbutton {
+  height: 16px;
+  width: 16px;
+  float: right;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  display: block;
+  vertical-align: middle;
+}
+.play {
+  background-image: url('img/control_play.png');
+}
+.play:hover {
+  background-image: url('img/control_play_blue.png');
+}
+.stop {
+  display: none;
+  background-image: url('img/control_stop.png');
+}
+.stop:hover {
+  background-image: url('img/control_stop_blue.png');
+}

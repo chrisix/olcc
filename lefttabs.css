@@ -1,0 +1,464 @@
+/* OnlineCoinCoin stylesheet style "les tabs à gauche"
+ */
+
+HTML, BODY {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #000;
+  color: #CCF;
+}
+
+A {
+  color: #CFA;
+  text-decoration: none;
+}
+A:hover {
+  color: #FCA;
+}
+A:visited {
+  color: #FAC;
+  text-decoration: none;
+}
+
+INPUT, SELECT {
+  border: 1px solid #CCF;	
+}
+
+/* Le panneau d'aide */
+#help {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  border: 2px dotted blue;
+  background-color: #FFE902;
+  opacity: 0.9;
+  z-index: 95;
+  display: none;
+}
+
+/* le mode panic: plein écran */
+#bossframe {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  position: fixed;
+  background-repeat: no-repeat;
+  z-index: 2000;
+  display: none;
+  color: #000;
+}
+
+/* La barre d'outils */
+#toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 130px;
+  padding: 2px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 8pt;
+}
+#toolbar-icons {
+  padding: 0; /* 2px 5px; */
+}
+#toolbar-icons IMG {
+  border: 1px solid transparent;
+  padding: 2px;
+  vertical-align: middle;
+}
+#toolbar-icons IMG:hover {
+  border: 1px solid #FCA;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+#toolbar-title {
+  padding: 2px;
+}
+#toolbar-title * {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-align: center;
+}
+#toolbar-log {
+  display: none;
+}
+
+img.totoz {
+  position: absolute;
+  z-index: 99;
+}
+.totoz {
+  color: #0A1;
+}
+.totoz:hover {
+  color: #800;
+}
+
+/* Styles des onglets */
+#tabs {
+  position: fixed;
+  top: 120px;
+  left: 2px;
+  width: 130px;
+  z-index: 30;
+  color: #000;
+}
+#tabs DIV {
+  cursor: default;
+}
+#tabs-boards {
+  text-align: left;
+  font-size: 9pt;
+  font-weight: bold;
+}
+.tab {
+  margin: 0;
+  padding: 3px;
+  border-right: 2px solid transparent;
+  border-top: 2px solid #AAA;
+  border-left: 2px solid #888;
+  border-bottom: 2px solid #000;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+}
+.tab:hover {
+  border-bottom: 2px solid #900;
+  border-top: 2px solid #F00;
+  border-left: 2px solid #B00;
+}
+.tab IMG {
+  vertical-align: middle;
+  border: 0;
+  padding-right: 2px;
+}
+.tab-notif {
+  color: #A00;
+  padding-left: 3px;
+  font-weight: bold;
+}
+.tab-hidden {
+  color: #888;
+  border-right: 2px solid #000;
+  border-top: 1px solid #555;
+  border-left: 1px solid #777;
+  border-bottom: 1px solid #AAA;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  margin-right: 0px;
+}
+.tab-hidden:hover {
+  border-bottom: 1px solid #900;
+  border-top: 1px solid #F00;
+  border-left: 1px solid #B00;
+}
+.tabs-actions {
+  padding: 2px;
+  text-align: center;
+}
+.tabs-actions IMG {
+  margin-top: 1px;
+  padding: 2px;
+  border: 1px solid transparent;
+}
+.tabs-actions IMG:HOVER {
+  border: 1px solid #FCA;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+#tabs-filters {
+  margin: 3px;
+  text-align: center;
+}
+.filter {
+  margin: 2px;
+  padding: 1px 3px 1px 3px;
+  color: #AFC;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+.filter-active {
+  color: #FCA;
+  background-color: #630;
+  border: 1px solid #FCA;
+}
+.filter:hover {
+  color: #FCA;
+  border: 1px solid #FCA;
+}
+
+#popup {
+  position: fixed;
+  top: 5px;
+  left: 170px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 8px;
+  background: #FFF;
+  color: #000;
+  z-index: 75;
+  display: none;
+}
+
+#pinnipede {
+  position: fixed;
+  top: 0px;
+  left: 130px;
+  right: 0;
+  bottom: 25px;
+  padding: 0;
+  border-left: 2px solid #000;
+  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+  color: #003;
+}
+#pinnipede A {
+  color: #390;
+  text-decoration: none;
+}
+#pinnipede A:hover {
+  color: #930;
+}
+#pinnipede A:visited {
+  color: #903;
+  text-decoration: none;
+}
+#pinnipede DIV {
+  padding: 0 4px 0 4px;
+  border-width: 1px 1px 1px 3px;
+  border-color: transparent;
+  border-style: solid;
+}
+.clock {
+  font-weight: bold;
+  cursor: default;
+}
+.clockref {
+  color: #00F;
+  border: 1px solid transparent;
+  cursor: default;
+}
+.login {
+  color: #C00;
+}
+.login:before { content: "<"; }
+.login:after  { content: ">"; }
+.ua {
+  color: #800;
+  font-style: italic;
+}
+.ua:before { content: "["; }
+.ua:after  { content: "]"; }
+DIV.newpost {
+  border-left: 3px dotted #080!important;
+}
+SPAN.bigorno {
+  font-weight: bold;
+  color: #F0F;
+}
+DIV.bigorno > SPAN.message {
+  border: 1px dotted #F0F;
+}
+SPAN.canard {
+  font-weight: bold;
+  color: #E3E;
+  cursor: crosshair;
+}
+DIV.answer {
+  border-left: 3px solid #55F!important;
+}
+SPAN.mypost {
+  color: #E00;
+  font-weight: bold;
+  border: 1px solid transparent;
+}
+DIV.mypost {
+  border-left: 3px solid #F00!important;
+}
+DIV.hilight {
+  background-color: #DEF!important;
+  border-color: #029!important;
+}
+SPAN.hilight {
+  background-color: #DEF!important;
+  border: 1px solid #029!important;
+}
+.plonk {
+  color: #777!important;
+  font-style: italic!important;
+}
+
+#palmipede {
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1px 5px 1px 5px;
+}
+#palmipede * {
+  vertical-align: middle;
+}
+#palmipede IMG {
+  border: 1px solid transparent;
+  padding: 1px;
+}
+#palmi-message {
+  color: #000000;
+}
+
+
+.panel-tabs {
+	background-color: #222;
+	border-bottom: 1px solid #666;
+	height: 55px;
+}
+.panel-tabs .panel-tab {
+	font-size: 90%;
+	float: left;
+	text-align: center;
+	padding: 2px 5px 2px 5px;
+	margin-left: 2px;
+	border: none;
+	background-color: transparent;
+	cursor: default;
+}
+.panel-tab:hover {
+	background-color: #FCA;
+	color: #014;
+}
+.panel-tab IMG, .panel-tab IMG:hover {
+	border: 0!important;
+	padding: 0!important;
+	margin: 2px!important;
+	background-color: transparent!important;
+}
+.tab-active {
+	background-color: #ea7!important;
+	color: #014;
+}
+.subpanel {
+  max-height: 480px;
+  overflow: auto;
+}
+.panel, .config-panel {
+  position: fixed;
+  top: 0;
+  left: 105px;
+  border: 2px solid #EEE;
+  padding: 2px;
+  z-index: 80;
+  background: #000;
+  color: #CCF;
+  width: 500px;
+}
+.panel-header {
+  border-bottom: 1px solid #CCF;
+  font-weight: bold;
+}
+.config-panel IMG {
+  border: 1px solid transparent;
+  padding: 2px;
+  vertical-align: middle;
+}
+.config-panel IMG:hover {
+  border: 1px solid #FCA;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+td.subpanel {
+  text-align: left;
+}
+td.panel-board {
+  color: #000;
+  padding-left: 1em;
+  font-weight: bolder;
+  z-index: 90;
+}
+td.cstate {
+  text-align: center;
+  color: #AFB;
+  width: 60px;
+}
+td.cinfo {
+  text-align: right;
+}
+
+#newboard {
+  position: fixed;
+  top: 180px;
+  left: 88px;
+  border: 1px solid #336;
+  background: #000;
+  color: #AFC;
+  max-height: 400px;
+  overflow: auto;
+  z-index: 99;
+}
+#newboard LI {
+  cursor: pointer;
+}
+#newboard LI:hover {
+  text-decoration: underline;
+  color: #FCA;
+}
+
+#post-form {
+  margin : 0;
+  padding: 0;
+  display: block;
+}
+#totoz-form {
+  float: right;
+  margin : 0;
+  padding: 0;
+  display: block;
+}
+#totozpanel {
+  position: fixed;
+  right: 18px;
+  bottom: 25px;
+  border: 1px solid #336;
+  background: #000;
+  color: #CCF;
+  z-index: 99;
+}
+#totoz-list {
+  max-height: 500px;
+  max-width: 500px;
+  overflow: auto;
+}
+#totozpanel > .panel-header {
+  text-align: right;
+}
+#totoz-list TR:hover {
+  background-color: #630;
+  color: #FCA;
+}
+#totoz-list TD {
+  text-align: center;
+}

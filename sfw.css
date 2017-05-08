@@ -1,0 +1,460 @@
+/* OnlineCoinCoin default stylesheet
+ */
+
+HTML, BODY {
+  font-family: Tahoma, Helvetica, sans-serif;
+  font-size: 8pt;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #EAE8E4;
+  background-image: url('img/sfw-top.png');
+  background-repeat: no-repeat;
+  color: #000;
+}
+
+A {
+  color: #00F;
+  text-decoration: none;
+}
+A:hover {
+  color: #00A;
+  text-decoration: underline;
+}
+A:visited {
+  color: #606420;
+}
+
+INPUT, SELECT {
+  border: 1px solid #FFF;
+  font-family: Tahoma, sans-serif;
+  font-size: 8pt;
+}
+INPUT:hover, SELECT:hover, INPUT:focus, SELECT:focus {
+  border: 1px solid #000;
+}
+
+/* Le panneau d'aide */
+#help {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background-color: #EAE8E4;
+  border: 2px solid #6D6D6D;
+  opacity: 0.9;
+  z-index: 95;
+  display: none;
+}
+
+/* le mode panic: plein écran */
+#bossframe {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  position: fixed;
+  background-repeat: no-repeat;
+  background-color: #FFF;
+  z-index: 2000;
+  display: none;
+  color: #000;
+}
+
+/* La barre d'outils */
+#toolbar {
+  position: fixed;
+  top: 26px;
+  left: 10px;
+  width: 533px;
+  height: 23px;
+  text-align: center;
+  background-image: url('img/sfw-back-toolbar.png');
+  background-repeat: repeat-x;
+  z-index: 50;
+  vertical-align: middle;
+}
+#toolbar-icons {
+  float: left;
+}
+#toolbar-icons IMG {
+  border: 1px solid transparent;
+  padding: 2px;
+  vertical-align: middle;
+}
+#toolbar-icons IMG:hover {
+  border: 1px solid #0A246A;
+  background-color: #B6BDD2;
+}
+#toolbar-title UL {
+  margin-top: 0;
+  padding-top: 2px;
+  vertical-align: middle;
+}
+#toolbar-title LI {
+  display: inline;
+  list-style-type: none;
+  vertical-align: middle;
+}
+#toolbar-title LI:after { content: " |"; }
+#toolbar-log {
+  float: right;
+  vertical-align: middle;
+  margin-top: 2px;
+}
+
+img.totoz {
+  position: absolute;
+  z-index: 99;
+}
+.totoz {
+  color: #0A1;
+}
+.totoz:hover {
+  color: #800;
+}
+
+/* Styles des onglets */
+#tabs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 80px;
+  padding-top: 10px;
+  padding-left: 2px;
+  width: 120px;
+  z-index: 30;
+  color: #000;
+  background-color: #EAE8E4;
+}
+#tabs DIV {
+  cursor: default;
+}
+#tabs-boards {
+  text-align: left;
+  font-weight: bold;
+}
+.tab {
+  margin: 0;
+  padding: 3px;
+  border: 1px solid #0A246A;
+}
+.tab:hover {
+  border: 1px solid #0A246A;
+  background-color: #B6BDD2;
+}
+.tab IMG {
+  vertical-align: middle;
+  border: 0;
+  padding-right: 2px;
+}
+.tab-notif {
+  color: #A00;
+  padding-left: 3px;
+  font-weight: bold;
+}
+.tab-hidden {
+  border: 1px solid #FFF;
+  color: #888;
+}
+.tab-hidden:hover {
+  border: 1px solid #0A246A;
+  background-color: #B6BDD2;
+}
+.tabs-actions {
+  background-image: url('img/sfw-back-toolbar.png');
+  background-repeat: repeat;
+}
+.tabs-actions IMG {
+  margin-top: 1px;
+  padding: 2px;
+  border: 1px solid transparent;
+}
+.tabs-actions IMG:HOVER {
+  border: 1px solid #0A246A;
+  background-color: #B6BDD2;
+}
+#tabs-filters {
+  padding: 3px;
+  text-align: center;
+}
+.filter {
+  margin: 2px;
+  padding: 1px 3px 1px 3px;
+  border: 1px solid #FFF;
+  font-weight: bold;
+  color: #888;
+  background-color: #D4D0C8;
+}
+.filter-active {
+  color: #000;
+  background-color: #D4D5D8;
+  border: 1px solid #0A246A;
+}
+.filter:hover {
+  border: 1px solid #0A246A;
+  background-color: #B6BDD2;
+}
+
+#popup {
+  font-family: Times New Roman, Times, serif;
+  font-size: 10pt;
+  position: fixed;
+  top: 54px;
+  left: 195px;
+  margin-right: 15px;
+  background-color: #EAE8E4;
+  border: 2px solid #6D6D6D;
+  padding: 8px;
+  z-index: 75;
+  display: none;
+}
+
+#pinnipede {
+  font-family: Times New Roman, Times, serif;
+  font-size: 10pt;
+  position: fixed;
+  top: 76px;
+  left: 123px;
+  right: 0;
+  bottom: 25px;
+  padding-left: 40px;
+  background-color: #FFF;
+  background-image: url('img/sfw-back-pinni.png');
+  background-repeat: repeat-y;
+  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+}
+#pinnipede DIV {
+  border-left: 4px solid transparent;
+  border-right: 1px solid #FFF;
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+}
+DIV.post {
+  margin-left: 4px;
+  padding: 0 4px 0 4px;
+  background-color: #FFF;
+}
+.clock {
+  font-weight: bold;
+  cursor: default;
+}
+.clockref {
+  color: #00F;
+  border: 1px solid transparent;
+  cursor: default;
+}
+.login {
+  color: #C00;
+}
+/* .login:after  { content: " - "; } */
+.ua {
+  color: #800;
+  font-style: italic;
+}
+.ua:before { content: "("; }
+.ua:after  { content: ")"; }
+DIV.newpost {
+  border-left: 4px dotted #080!important;
+}
+SPAN.bigorno {
+  font-weight: bold;
+  color: #F0F;
+}
+DIV.bigorno > SPAN.message {
+  border: 1px dotted #F0F;
+}
+SPAN.canard {
+  font-weight: bold;
+  color: #F0F;
+  cursor: crosshair;
+}
+DIV.answer {
+  border-left: 4px solid #55F!important;
+}
+SPAN.mypost {
+  color: #E00;
+  font-weight: bold;
+  border: 1px solid transparent;
+}
+DIV.mypost {
+  border-left: 4px solid #F00!important;
+}
+DIV.hilight {
+  border-color: #0A246A!important;
+}
+SPAN.hilight {
+  background-color: #B6BDD2!important;
+  border: 1px solid #0A246A!important;
+}
+.plonk {
+  color: #777!important;
+  font-style: italic!important;
+}
+
+#palmipede {
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2px 5px 2px 5px;
+  background-color: #D4D0C8;
+  vertical-align: middle;
+  border-top: #888;
+}
+#palmipede FORM, #palmipede FORM * {
+  vertical-align: middle;
+}
+#palmipede IMG {
+  border: 1px solid transparent;
+  padding: 1px;
+}
+#palmi-message {
+  color: #000000;
+}
+
+#post-form {
+  float: left;
+  margin: 0;
+  padding-top: 2px;
+  display: block;
+  vertical-align: middle;
+}
+#totoz-form {
+  float: right;
+  display: block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+
+.panel-tabs {
+	background-color: #fff;
+	border-bottom: 1px solid #666;
+	height: 55px;
+}
+.panel-tabs .panel-tab {
+	font-size: 90%;
+	float: left;
+	text-align: center;
+	padding: 2px 5px 2px 5px;
+	margin-left: 2px;
+	border: none;
+	background-color: transparent;
+	cursor: default;
+}
+.panel-tab:hover {
+	background-color: #e0ecff;
+}
+.panel-tab IMG, .panel-tab IMG:hover {
+	border: 0!important;
+	padding: 0!important;
+	margin: 2px!important;
+	background-color: transparent!important;
+}
+.tab-active {
+	background-color: #bcf!important;
+}
+.subpanel {
+  max-height: 480px;
+  overflow: auto;
+}
+.panel, .config-panel {
+  position: fixed;
+  top: 50px;
+  left: 125px;
+  padding: 0;
+  z-index: 80;
+  background-color: #EAE8E4;
+  border: 2px solid #6D6D6D;
+  width: 500px;
+}
+.panel-header {
+  border: 1px solid #FFF;
+  background-color: #888;
+  color: #FFF;
+  padding-left: 5px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.config-panel IMG, .panel-header IMG {
+  border: 1px solid transparent;
+  padding: 2px;
+  vertical-align: middle;
+}
+.config-panel IMG:hover, .panel-header IMG:hover {
+  border: 1px solid #0A246A;
+  background-color: #B6BDD2;
+}
+td.subpanel {
+  text-align: left;
+}
+td.panel-board {
+  color: #000;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-weight: bolder;
+  z-index: 90;
+}
+td.cstate {
+  text-align: center;
+  color: #0A246A;
+  width: 65px;
+}
+td.cinfo {
+  text-align: right;
+}
+
+#newboard {
+  position: fixed;
+  top: 180px;
+  left: 88px;
+  background-color: #EAE8E4;
+  border: 2px solid #6D6D6D;
+  max-height: 400px;
+  overflow: auto;
+  z-index: 99;
+}
+#newboard LI {
+  border: 1px solid transparent;
+  padding: 2px;
+  cursor: pointer;
+  list-style-type: none;
+}
+#newboard LI:hover {
+  border: 1px solid #0A246A;
+  background-color: #B6BDD2;
+}
+
+#totozpanel {
+  position: fixed;
+  right: 18px;
+  bottom: 25px;
+  background-color: #EAE8E4;
+  border: 2px solid #6D6D6D;
+  z-index: 99;
+}
+#totoz-list {
+  max-height: 500px;
+  max-width: 500px;
+  overflow: auto;
+}
+#totozpanel > .panel-header {
+  text-align: right;
+}
+#totoz-list TR {
+  border: 1px solid transparent;
+}
+#totoz-list TR:hover {
+  border: 1px solid #0A246A;
+  background-color: #B6BDD2;
+}
+#totoz-list TD {
+  text-align: center;
+}

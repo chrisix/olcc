@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link title="default" rel="stylesheet" href="default.css" type="text/css" />
+  <link title="oldolcc" rel="alternate stylesheet" href="oldolcc.css" type="text/css" />
+  <link title="lefttabs" rel="alternate stylesheet" href="lefttabs.css" type="text/css" />
+  <link title="sfw" rel="alternate stylesheet" href="sfw.css" type="text/css" />
+  <link title="golcc" rel="alternate stylesheet" href="golcc.css" type="text/css" />
+  <!--[if lt IE 7]>
+  <link title="default" rel="stylesheet" href="default_ie.css" type="text/css" />
+  <link title="lefttabs" rel="stylesheet" href="lefttabs_ie.css" type="text/css" />
+  <link title="sfw" rel="stylesheet" href="sfw_ie.css" type="text/css" />
+  <link title="golcc" rel="stylesheet" href="golcc_ie.css" type="text/css" />
+  <![endif]-->
+  <script type="text/javascript" src="utils.js"></script>
+  <script type="text/javascript" src="board.js"></script>
+  <script type="text/javascript" src="config.js"></script>
+  <script type="text/javascript" src="olcc.js"></script>
+  <script type="text/javascript" src="boards_config.js"></script>
+  <title>OnlineCoinCoin</title>
+</head>
+
+<body>
+
+  <div id="toolbar">
+    <div id="toolbar-icons">
+      <img src="img/coin.png" alt="[Balltrap]" title="Lancer/arrêter les canards" onclick="balltrapIcon()" />
+      <img src="img/attach.png" alt="[Fichier]" title="Attacher un fichier" onclick="attachFile()" />
+      <img src="img/dispall.png" alt="[Tout]" title="Afficher tous les onglets" onclick="dispAll()" />
+      <img src="img/refreshall.png" alt="[Refresh]" title="Refresh de toutes les tribunes" onclick="refreshAll()" />
+      <img src="img/stopall.png" alt="[Stop]" title="Arrêt de toutes les tribunes" onclick="stopAll()" />
+      <img src="img/config.png" alt="[Config]" title="Panneau de configuration" onclick="toggleConfig()" />
+      <img src="img/bossmode.png" alt="[Panic!]" title="Panic!" onclick="bossMode()" />
+    </div>
+    <div id="toolbar-title">
+      <ul>
+        <li>OnlineCoinCoin <span id="version"></span></li>
+        <li><a target="_blank" href="infos.html">infos</a></li>
+        <li><a target="_blank" href="http://pycoincoin.free.fr/mantis/">bugtracker</a></li>
+        <li><a target="_blank" href="scrines/">screenshots</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div id="pinnipede"></div>
+  
+  <div id="tabs">
+    <div id="tabs-boards"></div>
+    <div class="tabs-actions">
+      <img src="img/dispall.png" alt="[Tout]" title="Toutes les tribunes" onclick="dispAll()" />
+      <img src="img/addboard.png" alt="[Nouveau]" title="Ajouter une tribune" onclick="newBoard()" />
+    </div>
+    <div id="tabs-filters"></div>
+    <div class="tabs-actions">
+      <img src="img/nofilter.png" alt="[NoFilter]" title="Aucun filtre" onclick="cancelFilter()" />
+    </div>
+  </div>
+  
+  <div id="palmipede">
+    <form id="totoz-form">
+      <label for="totoz-search">&nbsp;Cherche&nbsp;totoz&nbsp;:</label>
+      <input id="totoz-search" name="totoz" type="text" />
+      <img id="totoz-status" src="img/blank.gif" />
+    </form>
+    <form id="post-form">
+      <label for="palmi-message">Post&nbsp;:</label>
+      <input id="palmi-message" type="text" size="60" />
+      <label for="palmi-list">Tribune&nbsp;:</label>
+      <select id="palmi-list"></select>
+    </form>
+  </div>
+  
+  <div id="totozpanel" style="display:none">
+    <div class="panel-header">
+      Totoz Manager &nbsp;
+      <img src="img/cancel.png" alt="[Fermer]" title="Fermer" onclick="closePanel('totozpanel')" />
+    </div>
+    <div id="totoz-list"></div>
+  </div>
+
+  <div id="config" class="config-panel" style="display:none"></div>
+  
+  <div id="newboard" style="display:none">
+    <div class="panel-header">
+      Ajouter la tribune&nbsp;:
+      <img src="img/cancel.png" alt="[Fermer]" title="Fermer" onclick="closePanel('newboard')" />
+    </div>
+    <ul id="newbord-list"></ul>
+  </div>
+
+  <iframe id="attach" class="panel" style="display:none" src="attach.html"></iframe>
+  
+  <div id="popup"></div>
+
+  <div id="bossframe"></div>
+  
+  <div id="help">
+    <h2>Bienvenue sous OnlineCoinCoin \_o&lt;</h2>
+    <ul>
+      <li>Sélectionnez vos tribunes parmi celles disponibles dans la liste
+        et cliquer sur <img src="img/addboard.png" alt="[+]" /></li>
+      <li>Pour lancer vos tribunes, cliquer sur <img src="img/start.png" alt="[Démarrer]" /></li>
+      <li>Chaque tribune peut être configurée via son bouton
+      <img src="img/bconfig.png" alt="[Paramètres]" /><br />
+        Pour poster authentifié notamment, les cookies doivent être renseignés dans
+        ce panneau de configuration.</li>
+      <li>N'hésitez pas à consulter la <a href="infos.html">page d'infos</a>.</li>
+    </ul>
+    <a onclick="closePanel('help')">Cliquer ici pour fermer ce panneau</a>.
+  </div>
+
+  <div id="balltrap" style="cursor:crosshair;position:absolute;left:-50px;top:50px;width:32px;height:32px;overflow:hidden;z-index:1000"><img style="position:relative" src="img/coincoin.gif" /></div>
+
+  <!--[if IE]>
+    <script type="text/javascript" event="FSCommand(command,args)" for="myFlash">
+      eval(args);
+    </script>
+  <![endif]-->
+  <object class="playerpreview" id="myFlash" type="application/x-shockwave-flash" data="player_mp3_js.swf" width="1" height="1">
+    <param name="movie" value="player_mp3_js.swf" />
+    <param name="AllowScriptAccess" value="always" />
+    <param name="FlashVars" value="listener=myListener&amp;interval=800" />
+  </object>
+
+</body>
+
+</html>

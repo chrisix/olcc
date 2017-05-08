@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+<head>
+  <title>OnlineCoinCoin - infos</title>
+</head>
+<style type="text/css">
+  BODY {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+  }
+  h1 { text-align: center; background-color: #FD3; }
+  h2 { background-color: #AF8; }
+  .links { text-align: right; }
+</style>
+<body>
+
+  <h1>OnlineCoinCoin, by Chrisix</h1>
+  
+  <p class="links">
+    :: <a href="./">OnlineCoinCoin</a>
+    :: <strong>Infos</strong>
+    :: <a href="http://pycoincoin.free.fr/mantis/">Bug tracker</a>
+    :: <a href="./download/">Download</a>
+    :: <a href="./scrines/">Scrinechottes</a>
+    :: <a href="todo.html">TODO-list</a>
+    ::
+  </p>
+  
+  <h2>Saikoi</h2>
+  <p>Une tentative de coincoin en ligne quasi-intégralement codé en javascript. Le code est très fortement inspiré (pour ne pas dire parfois carrément pompé) sur le merveilleux script GreaseMonkey d'Axelflandersutifuto pour la tribune de linuxfr. Que les auteurs et patcheurs en soient remerciés, ainsi que tous les autres codeurs de tribunes 2.0 faisant usage d'Ajax et autres modernités.</p>
+  
+  <h2>News</h2>
+  <h4>Version 0.4.3, 17/09/13 23:00</h4>
+  <ul>
+    <li>Remise à niveau du package pour intégration de tas de petites modifications, comme l'adaptation
+      au nouveau serveur totoz.eu, le format du cookie dlfp, petits tunings de css et autres trucs
+      qui ne valent pas la peine d'être mentionnés (et que j'ai oubliés de toute façon).</li>
+  </ul>
+  
+  <h4>Version 0.4.2, 28/03/11 01:00</h4>
+  <ul>
+    <li>Personnalisation de la favicon</li>
+    <li>Fermeture des entrées <a href="http://pycoincoin.free.fr/mantis/view.php?id=86">86</a>,
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=91">91</a>,
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=92">92</a>,
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=92">94</a> et
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=95">95</a> dans le bugtracker</li>
+    <li>Le non-effaçage de mes posts et leurs réponses de l'historique est désormais débrayable dans
+      les options de config (ça fera plaisir à adonai&lt;)</li>
+  </ul>
+  
+  <h4>Version 0.4.1, 24/02/11 00:50</h4>
+  <ul>
+    <li>Suite à la <a href="http://linuxfr.org/board/">nouvelle version de dlfp en RoR</a>, la tribune historique
+      a quelque peu changé de paramètres. La config d'olcc a donc été mise à jour.</li>
+    <li>Un peu auparavant, un batracien avait levé un beau trou dans le slip (injection de code HTML
+      dans les user-agents). C'est l'occasion de packager un slip neuf.</li>
+    <li>Raivolussion&nbsp;! Tout le monde s'accordait à dire que la css par défaut est ugly.
+      Du coup, on lui a mis un petit coup de polish, c'est devenu une sorte de mix entre Golcc et EnhancedBoard.
+      L'ancien style est toujours disponible sous le nom de thème "oldolcc".</li>
+  </ul>
+
+  <h4>Version 0.4.0, 09/01/11 00:30</h4>
+  La Chrisix Corp. est fière de présenter cette nouvelle version 0.4.0 "dguihal edition" qui introduit
+  une feature de taille&nbsp;: la sauvegarde / restauration de configuration.<br />
+  Comment ça marche&nbsp;?
+  <ul>
+    <li>Dans la fenêtre de configuration, une section Load/Store a fait son apparition.</li>
+    <li>En cliquant sur "Sauvegarde", un fichier contenant tous les paramètres de configuration
+      (y compris les cookies) est généré, destiné à être enregistré sur disque local.</li>
+    <li>En cliquant sur "Chargement", on restaure une configuration préalablement sauvegardée
+      depuis le fichier local choisi dans le champ de saisie.</li>
+    <li>À noter que lors de la sauvegarde, le fichier de configuration est généré à la volée&nbsp;:
+      il n'est jamais enregistré sur le serveur d'olcc (pour les paranos qui auraient peur pour
+      leurs données)</li>
+  </ul>
+  Cette feature a été intégralement développée par <a href="http://linuxfr.org/~dguihal/">dguihal</a>.
+  Moult remerciements à lui.
+    
+    
+  <h4>Version 0.3.9, 13/03/10 21:00</h4>
+  Quelques petites nouveautés et bugfix, pas énorme, mais juste histoire de reprendre un peu le dév.
+  <ul>
+    <li>Correction des bugs <a href="http://pycoincoin.free.fr/mantis/view.php?id=59">#59/#63</a>, <a href="http://pycoincoin.free.fr/mantis/view.php?id=81">#81</a> et <a href="http://pycoincoin.free.fr/mantis/view.php?id=82">#82</a></li>
+    <li>Correction du bug (vieux bug non répertorié) qui empêchait de poster des codes en %truc (ils étaient interprétés, c'est ballot)</li>
+    <li>Persistence des posts "importants"&nbsp;: désormais, en cas de dépassement du nombre max de posts dans le pinnipède, les posts de l'utilisateur,
+      les posts qui lui répondent ou qui le bigornophonent ne seront plus jamais supprimés.</li>
+    <li>À propos de bigornophone, celui-ci est maintenant case-insensitive, et on peut définir des alias à son pseudo&nbsp;:
+      dans la configuration, entrer vos multis séparés par des | dans le champ "Login".</li>
+  </ul>
+  
+  <h4>Version 0.3.8, 21/02/10 22:00</h4>
+  Une version de feignasse&nbsp;: ce sont les autres qui ont bossé à ma place, merci les gentils contributeurs&nbsp;! [:itm]
+  <ul>
+    <li>Intégration du patch de <a href="http://linuxfr.org/~LiNuCe/">LiNuCe</a> qui gère If-Modified-Since/Last-Modified + code 304, le combo gagnant pour la bande passante.</li>
+    <li>Intégration aussi du patch de <a href="http://linuxfr.org/~grid/">grid</a> pour les liens sur les <a href="http://lecons.ssz.fr/">leçons</a> (entrée <a href="http://pycoincoin.free.fr/mantis/view.php?id=76">#76</a> dans le Mantis).</li>
+    <li>Ah oui, et puis, normalement, le bug du bras a disparu (c'est <a href="http://linuxfr.org/~see/">see</a> qui a fourni la soluce). \\o/ [:kurrupt]</li>
+  </ul>
+  
+  <h4>Version 0.3.7, 18/01/10 22:46</h4>
+  <ul>
+    <li>Un petit fix du très fameux "bug de la css golcc avec les posts vides"</li>
+    <li>Pis tant qu'on y est un petit coup d'opacity dans la même css pour laisser légèrement paraître la couleur de la tribune dans les posts (suggestion de longue date de see&lt;)</li>
+    <li>Différentiation des notifications entre le bigornophonage général ("moules&lt;") et particulier ("mon_pseudo&lt;")</li>
+  </ul>
+  
+  <h4>Version 0.3.6, 24/07/09 00:10</h4>
+  <ul>
+    <li>Il faut bien l'avouer, la version 0.3.5 refoulait un peu des dessous de bras.
+        Alors hop elle a été mettre un coup de déo et elle est ressortie en 0.3.6
+        l'air de rien
+    </li>
+  </ul>
+  
+  <h4>Version 0.3.5, 23/07/09 01:10</h4>
+  <ul>
+    <li>Résolution des entrées <a href="http://pycoincoin.free.fr/mantis/view.php?id=51">51</a>,
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=53">53</a>,
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=54">54</a>,
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=55">55</a> et
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=56">56</a> du bugtracker</li>
+    <li>Refonte du panneau de configuration</li>
+    <li>Support du son (notifications hors-focus uniquement, stade encore expérimental)</li>
+  </ul>
+
+  <h4>Version 0.3.4, 18/07/09 19:20</h4>
+  <ul>
+    <li>Correction de bugs&nbsp;:
+      <ul>
+        <li>Bug <a href="http://pycoincoin.free.fr/mantis/view.php?id=31">31</a>, horloges cross-tribune dans le Palmipède</li>
+        <li>Bug <a href="http://pycoincoin.free.fr/mantis/view.php?id=49">49</a>, horloges impossibles (genre 39 février à 28h 64m 42s)</li>
+        <li>Bug <a href="http://pycoincoin.free.fr/mantis/view.php?id=50">50</a>, numéro de version dans l'ua</li>
+        <li>Prise en compte du changement de couleur de tribune dans la config dans le palmipède (bug signalé par Epy&lt;)</li>
+      </ul>
+    </li>
+  </ul>
+  
+  <h4>Version 0.3.3, 16/07/09 23:20</h4>
+  <ul>
+    <li>Ajout d'un mode "Chasse silencieuse" dans le balltrap, pour ceux qui veulent buter
+      du canard volant sans que ça poste des pan pan partout</li>
+    <li>Modification du tooltip sur horloge : celui-ci indique désormais le vrai id du post
+      tel que présent dans le backend (plutôt que l'id interne à olcc avant)</li>
+    <li>Correction du bug <a href="http://pycoincoin.free.fr/mantis/view.php?id=48">48</a></li>
+  </ul>
+
+  <h4>Version 0.3.2, 14/07/09 19:10</h4>
+  <ul>
+    <li>Correction dans les CSS pour les panneaux de config qui dépassent en hauteur</li>
+    <li>Ajout du click sur login (oui ça aurait pu être fait depuis longtemps)</li>
+    <li>Correction du bug qui faisait que les UAs personnalisés par tribune ne fonctionnaient pas</li>
+    <li>Correction du bug <a href="http://pycoincoin.free.fr/mantis/view.php?id=47">47</a></li>
+    <li>Ajout d'une feature cachée spéciale dédicace à Ned&lt; :-) (hint : ça a un rapport avec le balltrap)</li>
+  </ul>
+
+  <h4>Version 0.3.1, 12/07/09 02:10</h4>
+  <ul>
+    <li>Balltrap \o/ Kill them all ! Un grand merci à <a href="http://yasep.org/~whygee/coin.html">whygee</a>
+    pour son code js du vol des canards. Cette version lui doit beaucoup !</li>
+  </ul>
+
+  <h4>Version 0.3.0, 11/07/09 17:00</h4>
+  <ul>
+    <li>Possibilité de définir des tribunes perso</li>
+  </ul>
+
+  <h4>Version 0.2.5, 05/07/09 20:05</h4>
+  <ul>
+    <li>Nouvelle fonction "attacher un fichier" (icône trombone dans la barre d'outils)</li>
+    <li>Amélioration de la version iPhone (toujours en beta) - <a href="./iphone.html">accessible ici</a></li>
+  </ul>
+
+  <h4>Version 0.2.4, 03/07/09 21:55</h4>
+  <ul>
+    <li>Version spéciale pour iPhone (en beta) - <a href="./iphone.html">accessible ici</a></li>
+  </ul>
+
+  <h4>Version 0.2.3, 25/06/09 23:15</h4>
+  <ul>
+    <li>La sélection de style avait cassé la compatibilité avec IE et webkit, c'est réparé...
+      Testé sous Firefox 3, IE6, Opera 9, Safari 4 sous Windows et Firefox 3, Opera 9 et Konqueror 4 sous Linux.</li>
+  </ul>
+
+  <h4>Version 0.2.2, 24/06/09 21:50</h4>
+  <ul>
+    <li>Choix de la feuille de style dans l'interface de config (la feuille choisie est conservée d'une session à l'autre)</li>
+    <li>Suppression de la fenêtre de log</li>
+  </ul>
+
+  <h4>Version 0.2.1, 18/06/09 23:00</h4>
+  <ul>
+    <li>Intégration du filtre "Plonk" aimablement fourni par <a href="http://linuxfr.org/~benoar">benoar&lt;</a></li>
+    <li>Correction du bug <a href="http://pycoincoin.free.fr/mantis/view.php?id=45">45</a></li>
+    <li>Un peu de ménage dans le code qui était mal intégré au nouveau serveur depuis l'abandon de free (migration à l'arrache powered)</li>
+  </ul>
+
+  <h4>Version 0.2.0, 27/04/09 22:42</h4>
+  <ul>
+    <li>Compatibilité KHTML et Opera</li>
+    <li>Migration vers le serveur olcc.logicielslibres.info</li>
+  </ul>
+
+  <h4>Version 0.1.0, 18/03/09 22:20</h4>
+  <ul>
+    <li>Compatibilité IE 6</li>
+    <li>Notifications dans les onglets des tribunes</li>
+    <li>Nouvelle apparence par défaut et thèmes alternatifs (Firefox uniquement, via le menu Affichage &lt; Style de la page) : lefttabs, sfw, Golcc</li>
+    <li>Correction des bugs <a href="http://pycoincoin.free.fr/mantis/view.php?id=40">40</a>, <a href="http://pycoincoin.free.fr/mantis/view.php?id=42">42</a>, <a href="http://pycoincoin.free.fr/mantis/view.php?id=43">43</a> et plein d'autres pas référencés</li>
+  </ul>
+  
+  <h4>Version 0.0.10, 10/02/09 00:30</h4>
+  <ul>
+    <li>Recherche de totoz</li>
+    <li>Correction du bug <a href="http://pycoincoin.free.fr/mantis/view.php?id=38">38</a>.</li>
+  </ul>
+  
+  <h4>Version 0.0.9, 09/02/09 00:30</h4>
+  <ul>
+    <li>Implémentation du click-on-norloge-référence (feature-request <a href="http://pycoincoin.free.fr/mantis/view.php?id=36">36</a>), avec un effet qui tchue</li>
+    <li>Correction du bug <a href="http://pycoincoin.free.fr/mantis/view.php?id=34">34</a>.</li>
+  </ul>
+  
+  <h4>Version 0.0.8, 07/02/09 23:30</h4>
+  <ul>
+    <li>Ajout des tribunes d'olo&lt; et tifauv&lt; dans les pré-configurées</li>
+    <li>Nouvelle killer-feature : des pseudos onglets pour filtrer les messages (mes posts, bigorno...)</li>
+    <li>Correction à chaud <a href="http://www.clt-services.com/blog/post/Javascript-Probleme-avec-la-fonction-parseInt(08).aspx">d'un bug amusant</a> levé par un batracien</li>
+  </ul>
+  
+  <h4>Version 0.0.7, 05/02/09 19:20</h4>
+  <ul>
+    <li>Bigornophone</li>
+    <li>Un bug d'utf-8 dans le user-agent corrigé</li>
+    <li>Ajout d'une barre bleue sur le côté pour les posts qui répondent à l'utilisateur</li>
+    <li>Petits changements discrets dans la CSS</li>
+    <li>Correction du bug <a href="http://pycoincoin.free.fr/mantis/view.php?id=33">33</a>.
+  </ul>
+  
+  <h4>Version 0.0.6, 03/02/09 00:10</h4>
+  <ul>
+    <li>Titre de la fenêtre configurable dans les options</li>
+    <li>Indicateur de nouveaux posts :</li>
+      <ul>
+        <li>Les nouveaux posts sont mis en évidence par une bordure en pointillés verts
+          sur le côté.</li>
+        <li>Si l'onglet n'a pas le focus, un * est inséré dans le titre quand il y a des
+          nouveaux posts. Si il y a des réponses à mes posts parmi les nouveaux, c'est un #
+          à la place du *.</li>
+        <li>Pour faire disparaître ces notifications de nouveaux posts et la bordure verte,
+          cliquer n'importe où dans le pinnipède.</li>
+      </ul>
+  </ul>
+  
+  <h4>Version 0.0.5, 02/02/09 00:15</h4>
+  <ul>
+    <li>Panneau d'aide/bienvenue spécial pour la première utilisation</li>
+    <li>Sauvegarde de la configuration lors de la fermeture de la page</li>
+    <li>Boss-mode</li>
+    <li>Petits changements dans la CSS</li>
+  </ul>
+  
+  <h4>Version 0.0.4, 30/01/09 00:30</h4>
+  <ul>
+    <li>Correction des bugs 
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=20">25</a>,
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=20">27</a>,
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=21">28</a> et
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=23">30</a>.
+    </li>
+    <li>Petits changements cosmétiques très légers dans la css.</li>
+  </ul>
+  
+  <h4>Version 0.0.3, 29/01/09 00:16</h4>
+  <ul>
+    <li>Le scroll automatique vers le bas fonctionne</li>
+    <li>Les totoz sont implémentés, en popup ou inline. Le mode popup est le mode par défaut.
+      Un changement de mode ne sera actif que pour les posts arrivant après le changement
+      (ou en rechargeant la page)</li>
+    <li>Les posts highlightés apparaissent désormais dans un popup en haut</li>
+    <li>Petite amélioration cosmétique sur le style de "mes posts" (barre rouge à gauche)</li>
+    <li>Amélioration de la gestion des cas d'erreur http</li>
+  </ul>
+  
+  <h4>Version 0.0.2, 28/01/09 01:30</h4>
+  <ul>
+    <li>La touche entrée pour poster fonctionne</li>
+    <li>Les raccourcis Alt+touche pour le palmipède sont implémentés</li>
+    <li>Le post authentifié fonctionne pour peu qu'on ajoute ses cookies dans la config</li>
+    <li>La config utilisateur est désormais conservée d'une session à la suivante (elle est stockée dans des cookies valides 10000 jours)</li>
+    <li>Bugs corrigés&nbsp;:
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=20">20</a>
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=21">21</a>
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=23">23</a>
+      <a href="http://pycoincoin.free.fr/mantis/view.php?id=24">24</a>
+    </li>
+  </ul>
+  
+  <h2>Bugs et fritures manquantes</h2>
+  <p>Olcc en est à ses tout débuts. Il manque notamment des features que l'on attendrait dans toute tribune moderne qui se respecte, et il y a des bugs. En voici une liste non exhaustive afin que vous ne veniez pas me saouler avec 42000 requests évidentes.</p>
+  <ul>
+    <li><a href="http://pycoincoin.free.fr/mantis/">Liste des bugs référencés</a></li>
+    <li>Si on change la couleur d'une tribune, ce n'est pris en compte qu'au reload de la page</li>
+    <li>On ne peut pas ajouter soi-même une tribune qui n'est pas dans la liste des tribunes préconfigurées</li>
+    <li>Quand on change de tribune de destination pour le post, les horloges insérées dans la zone de saisie ne sont pas mises à jour avec le @ qui va bien</li>
+  </ul>
+
+</body>
+</html>

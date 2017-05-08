@@ -1,0 +1,469 @@
+/* OnlineCoinCoin stylesheet spéciale pour iPhone
+ */
+
+HTML, BODY {
+    margin: 0;
+    font-family: Helvetica;
+    background: #FFFFFF;
+    color: #000000;
+    -webkit-text-size-adjust: none;
+}
+A {
+  color: #08C;
+  text-decoration: none;
+}
+A:hover { text-decoration: underline; }
+
+#content {
+  position: fixed;
+  top: 0;
+  bottom: 30;
+  left: 0;
+  right: 0;
+}
+
+/* Le panneau d'aide */
+#help {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 40px;
+  bottom: 55px;
+  padding: 10px;
+  background-color: #EAE8E4;
+  border: 1px solid #2d3642;
+  overflow: auto;
+  -webkit-border-radius: 5px;
+  opacity: 0.9;
+  z-index: 95;
+  display: none;
+}
+
+/* La barre d'outils */
+#toolbar {
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0;
+    text-overflow: ellipsis;
+    color: #FFFFFF;
+    background: url(img/iPhoneToolbar.png) #6d84a2 repeat-x;
+    border-bottom: 1px solid #2d3642;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+}
+#toolbar-title {
+    padding-left: 10px;
+    line-height: 38px;
+    vertical-align: middle;
+}
+#out-totoz {
+  clear: both;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+#totoz-form {
+  display: block;
+  float: left;
+  padding-left: 10px;
+  padding-top: 4px;
+}
+#totoz-form label {
+  font-size: 12px;
+  color: #ffffff;
+}
+#totoz-form input {
+    box-sizing: border-box;
+    padding: 1px 20px 1px 1px;
+    font-size: 14px;
+    font-weight: normal;
+}
+#totoz-status {
+    position: absolute;
+    margin: -24px 0 0 270px;
+    z-index: 99;
+}
+
+.button {
+    float: right;
+    margin-top: 6px;
+    margin-right: 6px;
+    -webkit-border-image: url(img/iPhoneButton.png) 0 5 0 5;
+    -webkit-border-radius: 0;
+    border-width: 0 5px 0 5px;
+    padding: 0;
+    line-height: 28px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0;
+    text-decoration: none;
+    /* background: none;*/
+}
+IMG.button {
+    padding: 7px 5px;
+}
+.activeButton {
+    -webkit-border-image: url(img/iPhoneGoButton.png) 0 5 0 5!important;
+    /* border-width: 0 5px 0 5px; */
+}
+
+img.totoz {
+  position: absolute;
+  z-index: 99;
+}
+.totoz {
+  color: #282;
+}
+.totoz:hover {
+  color: #800;
+  cursor: pointer;
+}
+
+/* Styles des onglets */
+#tabs {
+  position: fixed;
+  left: 0;
+  bottom: 40px;
+  z-index: 30;
+  width: 100%;
+}
+#tabs DIV {
+  cursor: default;
+}
+#tabs-boards {
+  width: 405px;
+}
+.tab {
+  float: left;
+  padding-left: 2px;
+  padding-top: 1px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #2d3642;
+  height: 20px;
+  /* border-right: 1px solid #4d6682; */
+}
+.tab IMG {
+  float: right;
+  border: 0;
+/*  padding: 2px;
+  position: absolute;
+  border: 0;
+  left: auto;
+  right: auto;
+  top: 0; */
+}
+.tab-name {
+  cursor: pointer;
+}
+.tab-notif {
+  color: #A00;
+  padding-left: 3px;
+  font-weight: bold;
+}
+.tab-hidden {
+  background-color: transparent!important;
+  color: #999;
+  /* border-right: 1px solid #4d6682; */
+}
+.tabs-actions {
+  float: right;
+  padding-right: 5px;
+}
+.tabs-actions IMG {
+  border: 1px solid transparent;
+  padding: 2px;
+  vertical-align: middle;
+  -webkit-border-radius: 3px;
+}
+.tabs-actions IMG:hover {
+  border: 1px solid #2d3642;
+  -webkit-border-radius: 3px;
+}
+
+#filters {
+  position: fixed;
+  top: 39px;
+  left: auto;
+  right: 16px;
+  width: 180px;
+  background-color: #fff;
+  border: 1px solid #2d3642;
+  max-height: 400px;
+  overflow: auto;
+  z-index: 99;
+  -webkit-border-radius: 5px;
+}
+.filter {
+    border-width: 1px;
+    border-color: transparent;
+    -webkit-border-radius: 5px;
+    padding: 3px;
+    margin: 2px;
+    font-size: 16px;
+    font-weight: bold;
+    list-style: none;
+    cursor: pointer;
+    text-align: center;
+}
+#nofilter:hover {
+    color: #2d3682;
+}
+.filter-active {
+    /* -webkit-border-image: url(img/iPhoneButton.png) 3 5 3 5;
+    -webkit-border-radius: 0; */
+    text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0;
+    color: #FFFFFF;
+    background-color: #46B;
+    border-color: #000;
+}
+
+#popup {
+  border: 1px solid #4d6682;
+  -webkit-border-radius: 4px;
+  position: fixed;
+  top: 45px;
+  left: 5px;
+  right: 18px;
+  background-color: #fff;
+  color: #444444;
+  padding: 4px;
+  z-index: 75;
+  display: none;
+  font-size: 13px;
+}
+
+#pinnipede {
+  background-color: #fdfdfd;
+  text-align: left;
+  font-size: 13px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 39px;
+  bottom: 60px;
+}
+#pinnipede A {
+  color: #390;
+  text-decoration: none;
+}
+#pinnipede A:hover {
+  color: #930;
+}
+#pinnipede A:visited {
+  color: #903;
+  text-decoration: none;
+}
+#pinnipede DIV {
+  padding: 0 4px 0 4px;
+  border-width: 1px 1px 1px 3px;
+  border-color: transparent;
+  border-style: solid;
+}
+.clock {
+  font-weight: bold;
+  cursor: default;
+}
+.clockref {
+  color: #00F;
+  border: 1px solid transparent;
+  cursor: default;
+}
+.login {
+  color: #C00;
+}
+.login:before { content: "<"; }
+.login:after  { content: ">"; }
+.ua {
+  color: #800;
+  font-style: italic;
+}
+.ua:before { content: "["; }
+.ua:after  { content: "]"; }
+DIV.newpost {
+  border-left: 3px dotted #080!important;
+}
+SPAN.bigorno {
+  font-weight: bold;
+  color: #F0F;
+}
+DIV.bigorno > SPAN.message {
+  border: 1px dotted #F0F;
+}
+DIV.answer {
+  border-left: 3px solid #55F!important;
+}
+SPAN.mypost {
+  color: #E00;
+  font-weight: bold;
+  border: 1px solid transparent;
+}
+DIV.mypost {
+  border-left: 3px solid #F00!important;
+}
+DIV.hilight {
+  background-color: #FFF!important;
+  border-color: #2d3642!important;
+  -webkit-border-radius: 3px;
+}
+SPAN.hilight {
+  background-color: #FFF!important;
+  border: 1px solid #2d3642!important;
+  -webkit-border-radius: 3px;
+}
+.plonk {
+  color: #777!important;
+  font-style: italic!important;
+}
+
+#palmipede {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  height: 36px;
+  padding-bottom: 4px;
+  border-top: 1px solid #2d3642;
+  background: url(img/iPhoneToolbar.png) #6d84a2 repeat-x;
+  vertical-align: middle;
+}
+
+#post-form input, #post-form select {
+    /* box-sizing: border-box;
+    padding: 1px 2px 1px 30px; */
+    font-size: 14px;
+    font-weight: normal;
+}
+#post-form {
+  float: left;
+  margin: 0;
+  padding-top: 3px;
+  display: block;
+  vertical-align: middle;
+}
+
+.panel, .config-panel {
+  position: fixed;
+  top: 38px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0;
+  z-index: 80;
+  background-color: #ffffff;
+  border: 1px solid #2d3642;
+  font-size: 12px;
+  overflow: auto;
+}
+.panel-header {
+  background-image: url('img/iPhoneToolbar.png');
+  background-repeat: repeat-x;
+  height: 20px;
+  color: #fff;
+  padding: 2px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: left;
+  text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0;
+}
+.config-panel .panel-header {
+  background-color: #fad163;
+}
+.config-panel IMG, .panel-header IMG {
+  float: right;
+  border: 1px solid transparent;
+  padding: 2px;
+  vertical-align: middle;
+  -webkit-border-radius: 3px;
+}
+.config-panel IMG:hover, .panel-header IMG:hover {
+  border: 1px solid #2d3642;
+  /* background-color: #6694e3; */
+  -webkit-border-radius: 3px;
+}
+tr.subpanel {
+    border-bottom: 1px solid #E0E0E0;
+}
+td.subpanel {
+  text-align: left;
+}
+td.panel-board {
+  color: #000;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-weight: bolder;
+  z-index: 90;
+}
+td.cstate {
+  text-align: center;
+  color: #0A246A;
+  width: 65px;
+}
+td.cinfo {
+  text-align: right;
+}
+
+#newboard {
+  position: fixed;
+  top: 38px;
+  left: auto;
+  right: 16px;
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #2d3642;
+  max-height: 480px;
+  overflow: auto;
+  z-index: 99;
+  -webkit-border-radius: 5px;
+}
+#newboard UL {
+    margin: 0;
+    padding: 5px;
+}
+#newboard LI {
+    margin: 0;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 0 0 0 16px;
+    background: url(img/iPhoneArrow.png) no-repeat left center;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: bold;
+    list-style: none;
+    cursor: pointer;
+}
+#newboard LI:Hover {
+    color: #2d3682;
+}
+
+#totozpanel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 74px;
+  bottom: 62px;
+  background-color: #ffffff;
+  z-index: 99;
+}
+#totoz-list {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: #ffffff;
+}
+#totoz-list TR:hover {
+  background-color: #FFFFCC;
+}
+#totoz-list TD {
+  text-align: center;
+}
