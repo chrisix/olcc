@@ -282,6 +282,9 @@ SPAN.login {
   float: left;
   width: 125px;
   color: #833;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 SPAN.ua {
   font-style: italic;
@@ -289,6 +292,9 @@ SPAN.ua {
   float: left;
   width: 125px;
   color: #533;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 DIV.newpost {
   color: #000;

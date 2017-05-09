@@ -118,6 +118,29 @@ function writePlonk(message, board, post, login, info) {
     return message;
 }
 
+function writeUrl(message) {
+    var url_exp = new RegExp('(<a.*href="https?:\/\/([^\/?#"]+)(\/[^"?#]+)?["?#].*>)\[url\]');
+    function urlMini(m, tag, domain, url, offset, s) {
+        if ( /\/.*\.(png|jpg|jpeg|gif|webp)$/i.test(url) ) {
+            return tag+"[img]";
+        } else if ( /\/.*\.pdf$/i.test(url) ) {
+            return tag+"[pdf]";
+        } else {
+            if ( /\.[^.0-9]+$/.test(domain) ) {
+              dispdom = domain.susbtr(0, domain.lastIndexOf('.'));
+            }
+            else {
+              dispdom = domain;
+            }
+            if (dispdom.substr(0,4) == "www.") {
+              dispdom = dispdom.susbtr(4);
+            }
+            return tag+"["+dispdom+"]";
+        }
+    }
+    return message.replace(url_exp, urlMini);
+}
+
 function writeBigorno(message, board, postid, post) {
     var login_exp = (board.login) ? board.login : settings.value('default_login');
     if (login_exp) {
@@ -296,6 +319,33 @@ function seemsToBePostedByMe(board, login, info, realId) {
     return false;
 }
 
+var url_exp = new RegExp('(ht|f)tps?:\/\/([^\/?#]+)(?:[/?#]|$)(.*)');
+function urlMini(proto, domain, url) {
+    if ( proto == "f" ) {
+        return "[ftp]";
+    }
+    if ( /\/.*\.(png|jpg|jpeg|gif|webp)$/i.test(url) ) {
+        return "[img]";
+    }
+    if ( /\/.*\.(mpg|mpeg|mp4|webm|ogv|mkv|avi)$/i.test(url) ) {
+        return "[video]";
+    }
+    if ( /\/.*\.(mp3|ogg|aac|wav|flac)$/i.test(url) ) {
+        return "[audio]";
+    }
+    if ( /\/.*\.pdf$/i.test(url) ) {
+        return "[pdf]";
+    }
+    var dispdom = domain;
+    if ( /\.[^.0-9]+$/.test(domain) ) {
+      dispdom = domain.substr(0, domain.lastIndexOf('.'));
+    }
+    if (dispdom.substr(0,4) == "www.") {
+      dispdom = dispdom.substr(4);
+    }
+    return "["+dispdom+"]";
+}
+
 function insertToPinni(post, postId, board, clock, login, info, message, realId) {
     var allposts = GlobalPinni.getElementsByTagName("div") || [];
     var curDiv = null;
@@ -365,10 +415,16 @@ function insertToPinni(post, postId, board, clock, login, info, message, realId)
             }
         }
     }
-    // Toujours ouvrir les urls dans un autre onglet
+    // Formatage des urls
     var urls = post.getElementsByTagName('a');
     for (i=0; i<urls.length;i++) {
+        // Toujours ouvrir les urls dans un autre onglet
         urls[i].setAttribute('target','_blank');
+        var href = urls[i].getAttribute('href');
+        if (href && urls[i].innerHTML.strip() == "[url]") {
+            var m = url_exp.exec(href);
+            urls[i].innerHTML = urlMini(m[1], m[2], m[3]);
+        }
     }
     board.notify(NOTIF_NEW_POST, postId, post);
     // Effacement des posts en cas de dépassement de la taille maxi du pinnipède
