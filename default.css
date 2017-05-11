@@ -8,7 +8,7 @@ HTML, BODY {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #ededdb;
+  background-color: #fff; /* #ededdb; */
   color: #000;
 }
 

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 
 <head>
   <title>OnlineCoinCoin - infos</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <style type="text/css">
   BODY {
@@ -21,8 +21,7 @@
   <p class="links">
     :: <a href="./">OnlineCoinCoin</a>
     :: <strong>Infos</strong>
-    :: <a href="http://pycoincoin.free.fr/mantis/">Bug tracker</a>
-    :: <a href="./download/">Download</a>
+    :: <a href="https://github.com/chrisix/olcc">Github</a>
     :: <a href="./scrines/">Scrinechottes</a>
     :: <a href="todo.html">TODO-list</a>
     ::
@@ -32,6 +31,31 @@
   <p>Une tentative de coincoin en ligne quasi-intégralement codé en javascript. Le code est très fortement inspiré (pour ne pas dire parfois carrément pompé) sur le merveilleux script GreaseMonkey d'Axelflandersutifuto pour la tribune de linuxfr. Que les auteurs et patcheurs en soient remerciés, ainsi que tous les autres codeurs de tribunes 2.0 faisant usage d'Ajax et autres modernités.</p>
   
   <h2>News</h2>
+  <h4>Version 0.4.4, 08/05/17 23:00</h4>
+  <ul>
+    <li>Migration de mon vieux système de gestion de version cpold vers le compte <a href="https://github.com/chrisix/olcc">github</a> 
+      que j'avais ouvert il y a jore 4 ans. [:wouhou2] enfin la modernité, faites péter les poules rikouest&nbsp;!</li>
+    <li>Patch pour prettyfier les norloges au format iso pas belles berk berk qui sont postées par un client dont on
+      taira le nom pour ne pas livrer l'auteur à la vindicte populaire. Le patch masque via une astucieuse règle css
+      <tt>visibility: hidden</tt> les dates, lorsque celles-ci correspondent à la date du post, et sont donc inutiles.
+      L'avantage est que ça marche aussi pour les dates au format MM/DD# qui peuvent aussi bien être postées inutilement
+      parfois. Et puis, quand la date est significative, elle est affichée et prise en compte pour le highlight.</li>
+    <li>Ajout de nouveaux raccourcis clavier dans le palmipède&nbsp;:</li>
+      <ul>
+        <li><strong>alt-l</strong>&nbsp;: pour improver la productivity des furieux qui tapent les totoz à la main</li>
+        <li><strong>alt-a</strong>&nbsp;: pour chantonner sur la tribune</li>
+        <li><strong>alt-c</strong>&nbsp;: pour la balise <tt>&lt;code&gt;</tt> (spécifique à dlfp)</li>
+      </ul>
+    <li>Amélioration de la gestion/affichage des logins et UAs&nbsp;:</li>
+      <ul>
+        <li>Tweaks de css pour afficher les logins et UAs tronqués de façon harmonieuse et éviter les débordements qui arrivaient parfois</li>
+        <li>Le clic sur un UA insère désormais dans le palmi une interpellation bigornophonée de la moule (comme le clic sur le login),
+          mais de façon supposément intelligente pour ne pas se retrouver avec des trucs jore
+          <tt>Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0&lt;</tt></li>
+        <li>On peut faire ctrl-clic sur un login ou un UA pour copier l'intégralité de l'UA dans le palmi.</li>
+      </ul>
+  </ul>
+  
   <h4>Version 0.4.3, 17/09/13 23:00</h4>
   <ul>
     <li>Remise à niveau du package pour intégration de tas de petites modifications, comme l'adaptation
