@@ -123,20 +123,26 @@ function writeUrl(message) {
     function urlMini(m, tag, domain, url, offset, s) {
         if ( /\/.*\.(png|jpg|jpeg|gif|webp)$/i.test(url) ) {
             return tag+"[img]";
-        } else if ( /\/.*\.pdf$/i.test(url) ) {
-            return tag+"[pdf]";
-        } else {
-            if ( /\.[^.0-9]+$/.test(domain) ) {
-              dispdom = domain.susbtr(0, domain.lastIndexOf('.'));
-            }
-            else {
-              dispdom = domain;
-            }
-            if (dispdom.substr(0,4) == "www.") {
-              dispdom = dispdom.susbtr(4);
-            }
-            return tag+"["+dispdom+"]";
         }
+        if ( /\/.*\.(mpg|mpeg|mp4|webm|ogv|mkv|avi)$/i.test(url) ) {
+            return "[video]";
+        }
+        if ( /\/.*\.(mp3|ogg|aac|wav|flac)$/i.test(url) ) {
+            return "[audio]";
+        }
+        if ( /\/.*\.pdf$/i.test(url) ) {
+            return tag+"[pdf]";
+        }
+        if ( /\.[^.0-9]+$/.test(domain) ) {
+          dispdom = domain.susbtr(0, domain.lastIndexOf('.'));
+        }
+        else {
+          dispdom = domain;
+        }
+        if (dispdom.substr(0,4) == "www.") {
+          dispdom = dispdom.susbtr(4);
+        }
+        return tag+"["+dispdom+"]";
     }
     return message.replace(url_exp, urlMini);
 }
