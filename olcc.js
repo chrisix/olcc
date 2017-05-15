@@ -20,6 +20,8 @@ var GlobalProcessing = false;
 var GlobalWindowFocus = true;
 var GlobalFilters = new Array();
 
+var curChar = ''; // caractères à zoomer
+
 window.notified = function (notif) {
     if (GlobalWindowFocus) return;
     var titre = document.title.substr(0,1);
@@ -978,6 +980,29 @@ function toggleFilter(filter) {
     filterPosts(GlobalFilters);
 }
 
+function zoomCharacter(event) {
+    if (String.fromCharCode(event.keyCode).toLowerCase() != 'z') return;
+    if (curChar) {
+      var zoombox = document.getElementById("zoombox");
+      // console.log('enter keydown pinni : '+curChar+ ', cx='+cx+', cy='+cy);
+      zoombox.innerHTML = curChar;
+      // zoombox.style.position = 'absolute';
+      zoombox.style.top = cy + 'px';
+      zoombox.style.left = cx + 'px';
+      zoombox.style.display = 'block';
+      // var final_y = cy + 10 + zoombox.clientHeight;
+      if ((cy + 10 + zoombox.clientHeight) > window.innerHeight) {
+          zoombox.style.top = cy + document.documentElement.scrollTop - 10 - zoombox.clientHeight + 'px';
+      }
+      zoombox.style.visibility = '';
+    }
+}
+function killZoombox(event) {
+    // console.log('enter keyup pinni');
+    document.getElementById("zoombox").style.display = 'none';
+}
+
+
 function onLoad() {
     getSoundList();
     settings.setDefault();
@@ -995,6 +1020,8 @@ function onLoad() {
     balltrap_init();
     // window.onresize = balltrap_init;
     addEvent(window, 'resize', balltrap_init, false);
+    // addEvent(GlobalPinni, 'keydown', zoomCharacter, false);
+    addEvent(document, 'keyup', killZoombox, false);
     /* for (var name in GlobalBoards) {
         var board = GlobalBoards[name];
         (board.initstate == STATE_STOP) ? board.stop() : board.refresh();
@@ -1121,6 +1148,9 @@ function onKeyDown(event) {
                 }
             }
         }
+    }
+    else {
+        zoomCharacter(event);
     }
 }
 
@@ -1420,6 +1450,13 @@ function balltrap_mv(ev) {
     ev = ev || window.event;
     cx = ev.pageX || ev.clientX;
     cy = ev.pageY || ev.clientY;
+    // curChar = caractères sous la souris, pour le zoom.
+    // Aucun rapport avec le balltrap, mais comme le callback de mousemove existait déjà, autant le réutiliser
+    if (ev.rangeParent) {
+      i = ev.rangeOffset;
+      if (i<3) i=3;
+      curChar = ev.rangeParent.textContent.substr(i-3,6);
+    }
     return false;
 }
 function balltrap_init() {
