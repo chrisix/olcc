@@ -588,17 +588,14 @@ function sound_play(sound) {
 }
 function sound_queue() {
     if (GlobalSoundQueue.length == 0) return;
-    // alert(GlobalSoundQueue);
-    var flash = document.getElementById("myFlash");
-    flash.SetVariable("method:setVolume", ""+settings.value('sound_volume'));
-    flash.SetVariable("method:setUrl", GlobalSoundQueue.shift());
-    flash.SetVariable("method:play", "");
-    flash.SetVariable("enabled", "true");
+    var mp3 = document.getElementById("myFlash");
+    mp3.src= GlobalSoundQueue.shift();
+    mp3.volume = settings.value('sound_volume')/100.0;
+    mp3.play();
 }
 function sound_stop() {
-    document.getElementById("myFlash").SetVariable("method:stop", "");
+    document.getElementById("myFlash").pause();
     myListener.position = 0;
-    // GlobalIsPlaying = null;
 }
 
 function to_url(chaine) {
