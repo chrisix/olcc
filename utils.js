@@ -4,7 +4,7 @@
  ************************************************************/
  
 // Constantes globales génériques
-var VERSION = '0.4.4';
+var VERSION = '0.5.0-dev';
 
 // Constantes de gestion des états
 var STATE_LOADED = 'loaded'; // Tribune chargée
@@ -71,6 +71,7 @@ var NOTIF_ANSWER = 'new answer';
 var NOTIF_BIGORNO = 'bigorno';
 var NOTIF_BIGORNO_ALL = 'bigorno all';
 
+/* Dézinguage du support IE6
 var is_ie = true;
 try {
   var plop = new ActiveXObject('Microsoft.XMLHTTP');
@@ -78,6 +79,7 @@ try {
 catch (err) {
   is_ie = false;
 }
+*/
 
 var favicon = {
     change: function(iconURL, optionalDocTitle) {
@@ -617,23 +619,18 @@ String.prototype.strip = function () {
     return this.replace(/^\s+|\s+$/g, '');
 }
 
-// Evenements cross-browser
-function addEvent(object, event, callback, flag) {
-    if (is_ie) {
-        object.attachEvent("on"+event, callback);
-    }
-    else {
-        object.addEventListener(event, callback, flag);
-    }
+// Ne devrait servir que pour IE <= 9 en principe
+if (typeof Element.prototype.addEventListener === 'undefined') {
+    Element.prototype.addEventListener = function (e, callback) {
+      e = 'on' + e;
+      return this.attachEvent(e, callback);
+    };
 }
-// Evenements cross-browser
-function removeEvent(object, event, callback, flag) {
-    if (is_ie) {
-        object.detachEvent("on"+event, callback);
-    }
-    else {
-        object.removeEventListener(event, callback, flag);
-    }
+if (typeof Element.prototype.removeEventListener === 'undefined') {
+    Element.prototype.removeEventListener = function (e, callback) {
+      e = 'on' + e;
+      return this.detachEvent(e, callback);
+    };
 }
 
 // Divers ajouts pour compatibilité IE/reste du monde
