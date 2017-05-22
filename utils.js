@@ -4,7 +4,7 @@
  ************************************************************/
  
 // Constantes globales génériques
-var VERSION = '0.4.4';
+var VERSION = '0.4.5';
 
 // Constantes de gestion des états
 var STATE_LOADED = 'loaded'; // Tribune chargée
@@ -568,37 +568,27 @@ function stopSample() {
 
 var GlobalIsPlaying = null;
 var GlobalSoundQueue = new Array();
-var myListener = new Object();
-var curExtr = null;
-myListener.onInit = function() {
-    this.position = 0;
-};
-myListener.onUpdate = function() {
-    if (this.isPlaying != "true") {
-        if (GlobalIsPlaying) stopSample();
-        sound_queue();
-    }
-};
+
 function sound_play(sound) {
-    // if (GlobalIsPlaying) sound_stop();
-    if (!GlobalSoundQueue.contains(sound)) {
+    if (sound.substr(-7) != "(aucun)" && !GlobalSoundQueue.contains(sound)) {
         GlobalSoundQueue.push(sound);
-        if (myListener.isPlaying != "true") sound_queue();
+        if (document.getElementById('player').paused)
+          sound_queue();
     }
 }
 function sound_queue() {
     if (GlobalSoundQueue.length == 0) return;
-    // alert(GlobalSoundQueue);
-    var flash = document.getElementById("myFlash");
-    flash.SetVariable("method:setVolume", ""+settings.value('sound_volume'));
-    flash.SetVariable("method:setUrl", GlobalSoundQueue.shift());
-    flash.SetVariable("method:play", "");
-    flash.SetVariable("enabled", "true");
+    var player = document.getElementById("player");
+    player.volume = settings.value('sound_volume')/100.0;
+    player.src = GlobalSoundQueue.shift();
+    player.play();
 }
 function sound_stop() {
-    document.getElementById("myFlash").SetVariable("method:stop", "");
-    myListener.position = 0;
-    // GlobalIsPlaying = null;
+    document.getElementById("player").pause();
+}
+function sound_ended() {
+    if (GlobalIsPlaying) stopSample();
+    sound_queue();
 }
 
 function to_url(chaine) {
@@ -610,7 +600,6 @@ function str_replace(p, r, s) {
 function encodeRE(s) { // Theodor Zoulias, http://simon.incutio.com/archive/2006/01/20/escape#comment14
     return s.replace(/([.*+?^${}()|[\]\/\\])/g, '\\$1');
 }
-
 // ]/
 
 String.prototype.strip = function () {

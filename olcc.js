@@ -34,7 +34,7 @@ window.notified = function (notif) {
       case NOTIF_ANSWER:
         favicon.change("img/ico_reply.png", "# " + settings.value('window_title'));
         if (settings.value('sound_enabled')) {
-            // alert("coin");
+            // console.log("son answer fired");
             sound_play("sound/"+settings.value('sound_reply'));
         }
         break;
@@ -43,14 +43,14 @@ window.notified = function (notif) {
           favicon.change("img/ico_bigoall.png", "< " + settings.value('window_title'));
         }
         if (settings.value('sound_enabled')) {
-            // alert("meuh");
+            // console.log("son bigorno fired");
             sound_play("sound/"+settings.value('sound_bigorno'));
         }
         break;
       case NOTIF_BIGORNO:
         favicon.change("img/ico_bigorno.png", "@< " + settings.value('window_title'));
         if (settings.value('sound_enabled')) {
-            // alert("meuh");
+            // console.log("son bigorno fired");
             sound_play("sound/"+settings.value('sound_bigorno'));
         }
         break;

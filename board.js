@@ -259,7 +259,7 @@ function BoardProcessBackend(board, xhr) {
                 toPinniBottom();
             }
             if (!GlobalWindowFocus && hasNews && settings.value('sound_enabled')) {
-                // alert(GlobalIsPlaying);
+                // console.log("son new fired");
                 sound_play("sound/"+settings.value('sound_new'));
             }
             board.setState(STATE_IDLE);
