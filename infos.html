@@ -30,7 +30,26 @@
   <h2>Saikoi</h2>
   <p>Une tentative de coincoin en ligne quasi-intégralement codé en javascript. Le code est très fortement inspiré (pour ne pas dire parfois carrément pompé) sur le merveilleux script GreaseMonkey d'Axelflandersutifuto pour la tribune de linuxfr. Que les auteurs et patcheurs en soient remerciés, ainsi que tous les autres codeurs de tribunes 2.0 faisant usage d'Ajax et autres modernités.</p>
   
+  <h2>Bugs et fritures manquantes</h2>
+  <p>Un bug ? Une fonctionnalité absente qui vous fait cruellement défaut ? N'hésitez pas à <a href="https://github.com/chrisix/olcc/issues">signaler tout ça</a>.
+    Vous pouvez même directement <a href="https://github.com/chrisix/olcc/pulls">contribuer au code</a> si le coeur vous en dit.</p>
+
   <h2>News</h2>
+  <h4>Version 0.4.6, 03/06/17 14:16</h4>
+  <ul>
+    <li>L'highlight par #id ayant le vent en poulpe, olcc effectue un modeste premier pas en permettant d'insérer #id dans le palmi par ctrl-clic.
+      Pour gérer du vrai highlight sur ces #id en revanche, ça demande de revoir beaucoup de choses dans la structure assez mal foutue des posts
+      donc soyez pas trop pressés. Histoire de faire un peu de teasing, sachez tout de même qu'un effet de bord sympathique de cette future refonte
+      sera l'éradication du célèbre bug du nouvel an [:itm]</li>
+  </ul>
+
+  <h4>Version 0.4.5, 22/05/17 23:00</h4>
+  <ul>
+    <li>Remplacement du vilain objet Flash par une belle balise &lt;audio&gt; toute standarte de l'achtéhémèle 5
+      pour gérer les notifications sonores, avec l'adaptation du javascript idoine. Merci à ckillerz&lt; pour sa
+      proposition de poule-request, et à dave&lt; qui m'avait envoyé un patch analogue il y a genre un an /o\</li>
+  </ul>
+  
   <h4>Version 0.4.4, 08/05/17 23:00</h4>
   <ul>
     <li>Migration de mon vieux système de gestion de version cpold vers le compte <a href="https://github.com/chrisix/olcc">github</a> 
@@ -321,14 +340,5 @@
     </li>
   </ul>
   
-  <h2>Bugs et fritures manquantes</h2>
-  <p>Olcc en est à ses tout débuts. Il manque notamment des features que l'on attendrait dans toute tribune moderne qui se respecte, et il y a des bugs. En voici une liste non exhaustive afin que vous ne veniez pas me saouler avec 42000 requests évidentes.</p>
-  <ul>
-    <li><a href="http://pycoincoin.free.fr/mantis/">Liste des bugs référencés</a></li>
-    <li>Si on change la couleur d'une tribune, ce n'est pris en compte qu'au reload de la page</li>
-    <li>On ne peut pas ajouter soi-même une tribune qui n'est pas dans la liste des tribunes préconfigurées</li>
-    <li>Quand on change de tribune de destination pour le post, les horloges insérées dans la zone de saisie ne sont pas mises à jour avec le @ qui va bien</li>
-  </ul>
-
 </body>
 </html>

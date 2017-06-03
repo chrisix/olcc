@@ -152,32 +152,58 @@ function writeTotoz(message) {
     }
 }
 
+var lecon_exp = new RegExp('([lL]e([cç]|&ccedil;|&Ccedil;)on[ ]*([0-9]+))', 'gi');
 function writeLecon(message)
 {
   var index1 = message.indexOf("<a ",0);
-  var exp = new RegExp('([lL]e([cç]|&ccedil;|&Ccedil;)on[ ]*([0-9]+))', 'gi');
-  if ( exp.test(message) )
-  {
-    if (index1 != -1)
-    {
-      var _message = message.substring(0,index1).replace(exp, '<a href="http://lecons.ssz.fr/lecon/$3/">$1</a>');
+  if ( lecon_exp.test(message) ) {
+    if (index1 != -1) {
+      var _message = message.substring(0,index1).replace(lecon_exp, '<a href="http://lecons.ssz.fr/lecon/$3/">$1</a>');
       var index2 = message.indexOf("</a>",index1);
-      if (index2 != -1)
-      {
+      if (index2 != -1) {
         _message = _message + message.substring(index1,index2+4);
         _message = _message + writeLecon(message.substring(index2+4,message.length));
         return _message;
       }
     }
-    else
-    {
-      return message.replace(exp, '<a href="http://lecons.ssz.fr/lecon/$3/">$1</a>');
+    else {
+      return message.replace(lecon_exp, '<a href="http://lecons.ssz.fr/lecon/$3/">$1</a>');
     }
   }
-  else
-  {
+  else {
     return message;
-  }        
+  }
+}
+
+// Gestion de l'highlight des id, pas pour tout de suite (choses à adapter dans la structure des posts d'abord)
+// Cette fonction n'est pas encore appelée par le code d'insertion des posts dans le pinnipède.
+var ref_exp = new RegExp('[#]([0-9]+)(@[A-Za-z0-9_]+)?', '');
+function writePostRefs(message, board, postid, post) {
+  var index1 = message.indexOf("<a ",0);
+  if ( ref_exp.test(message) ) {
+    if (index1 != -1) {
+      var _message = writePostRefs(message.substring(0,index1), board, postid, post);
+      var index2 = message.indexOf("</a>",index1);
+      if (index2 != -1) {
+        _message = _message + message.substring(index1,index2+4);
+        _message = _message + writePostRefs(message.substring(index2+4,message.length), board, postid, post);
+        return _message;
+      }
+    }
+    else {
+      var refid = ref_exp.exec(message);
+      if (refid[1]) {
+        // return message.replace(exp, '<a href="http://lecons.ssz.fr/lecon/$3/">$1</a>');
+        // traitement afr icitte
+      }
+      else {
+        return message;
+      }
+    }
+  }
+  else {
+    return message;
+  }
 }
 
 var norloge_exp = new RegExp("((?:1[0-2]|0[1-9])/(?:3[0-1]|[1-2][0-9]|0[1-9])#|[0-9]{4}-[0-9][0-9]-[0-9][0-9]T)?((?:2[0-3]|[0-1][0-9])):([0-5][0-9])(:[0-5][0-9])?([¹²³]|[:\^][1-9]|[:\^][1-9][0-9])?(@[A-Za-z0-9_]+)?", "");
@@ -687,7 +713,7 @@ function onClick(event) {
     // Click sur la norloge d'un post
     else if (nodeClass.indexOf('clock') != -1) {
         if (event.ctrlKey) { // ctrl-click : on copie l'id du post
-          insertInPalmi("post-id: "+target.getAttribute("title").split(" ")[0]);
+          insertInPalmi("#"+target.getAttribute("title").split(" ")[0]);
         }
         else {
           var nodeId = target.parentNode.parentNode.getAttribute('id');

@@ -4,7 +4,7 @@
  ************************************************************/
  
 // Constantes globales génériques
-var VERSION = '0.4.5';
+var VERSION = '0.4.6';
 
 // Constantes de gestion des états
 var STATE_LOADED = 'loaded'; // Tribune chargée
