@@ -882,7 +882,7 @@ function resetFilter() {
 function cancelFilter() {
     resetFilter();
     GlobalFilters = [];
-    var allDiv = document.getElementById('tabs-filters').getElementsByTagName("div");
+    var allDiv = document.getElementById('filters').getElementsByTagName("div");
     for (var i=allDiv.length; i--;) {
         if (allDiv[i].className.indexOf("filter-active") != -1) {
             removeClass(allDiv[i], "filter-active");
@@ -939,11 +939,11 @@ function initPage() {
     }
     // Ajout des onglets spéciaux
     var filters = {
-        'mypost': "mes posts",
-        'answer': "réponses",
-        'bigorno': "bigorno&lt;",
-        'newpost': "nouveaux",
-        'pasplonk': "plonk"
+        'mypost': "Mes posts",
+        'answer': "Réponses",
+        'bigorno': "Bigorno",
+        'newpost': "Nouveaux",
+        'pasplonk': "Plonk"
     };
     var filter = null;
     for (var f in filters) {
@@ -951,17 +951,17 @@ function initPage() {
         filter.setAttribute('id', "filter-"+f);
         filter.className = "filter";
         filter.innerHTML = filters[f];
-        document.getElementById("tabs-filters").appendChild(filter);
+        document.getElementById("filters").appendChild(filter);
         addEvent(filter, "click", function(e){var z=e.target || e.srcElement; toggleFilter(z.getAttribute('id').substr(7));}, false);
     }
     // Ajout de la fenêtre d'aide au premier lancement
-    var help = document.getElementById('help');
+    // var help = document.getElementById('help');
     if (boards.length <= 0) {
-        help.style.display = 'block';
+    //    help.style.display = 'block';
         dispConfig();
     }
     else {
-        help.style.display = 'none';
+    //    help.style.display = 'none';
         onChangeTrib();
     }
 }
@@ -1167,7 +1167,7 @@ function getSelectedText(){
 
 function newBoard() {
     var panel = document.getElementById('newboard');
-    var list = document.getElementById('newbord-list');
+    var list = document.getElementById('newboard-list');
     list.innerHTML = '';
     var notrib = true;
     for (name in GlobalBoards) {
@@ -1266,7 +1266,7 @@ function displayTotoz(xhr) {
         return;
     }
     if (status == 200) {
-        totozPanel = document.getElementById('totozpanel');
+        totozPanel = document.getElementById('totoz-panel');
         totozPanel.style.display = 'block';
         document.getElementById('totoz-status').src = "img/blank.gif";
         var res = xhr.responseText;
@@ -1279,6 +1279,7 @@ function displayTotoz(xhr) {
         totozwrap.appendChild(totozTable);
         totozTable.setAttribute('cellspacing', "0");
         totozList.appendChild(totozwrap);
+        // totozList.appendChild(totozTable);
         var server = settings.value('totoz_server');
         for (var i=totozNodes.length; i--;) {
             var curtotoz = getNodeText(totozNodes[i]); //.textContent.strip();

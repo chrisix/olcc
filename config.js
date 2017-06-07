@@ -167,7 +167,7 @@ var GlobalBufStyle = '';
 
 // Bascule affichage/fermeture du panneau de config
 function toggleConfig() {
-    if (document.getElementById("config").style.display != 'none') {
+    if (document.getElementById("config-panel").style.display == 'block') {
         closeConfig();
     }
     else {
@@ -177,14 +177,14 @@ function toggleConfig() {
 
 // affichage du panneau de config
 function dispConfig() {
-    var configPanel = document.getElementById("config");
-    createConfigPanel(configPanel);
+    var configPanel = document.getElementById("config-panel");
+    createConfigPanel(document.getElementById("config"));
     configPanel.style.display = 'block';
 }
 
 // fermeture du panneau de config
 function closeConfig() {
-    var configPanel = document.getElementById("config");
+    var configPanel = document.getElementById("config-panel");
     configPanel.style.display = 'none';
     // removage des vues
     for (var name in GlobalBoards) {
@@ -257,21 +257,21 @@ function addConfigLine(board, subpanel) {
     tr.appendChild(td);
     // Cellule bouton start
     td = document.createElement('td');
-    icon = (board.state == STATE_STOP) ? "start.png" : "greystart.png";
-    td.innerHTML = '<img id="but-start-'+board.name+'" src="img/'+icon+'" alt="[Démarrer]" title="Démarrer" onclick="BoardStart(GlobalBoards['+"'"+board.name+"'"+'])" />';
+    icon = (board.state == STATE_STOP) ? "start" : "greystart";
+    td.innerHTML = '<div class="icon icon-'+icon+'" id="but-start-'+board.name+'" title="Démarrer" onclick="BoardStart(GlobalBoards['+"'"+board.name+"'"+'])"></div>';
     tr.appendChild(td);
     // Cellule bouton stop
     td = document.createElement('td');
-    icon = (board.state == STATE_STOP) ? "greystop.png" : "stop.png";
-    td.innerHTML = '<img id="but-stop-'+board.name+'" src="img/'+icon+'" alt="[Arrêter]" title="Arrêter" onclick="BoardStop(GlobalBoards['+"'"+board.name+"'"+'])" />';
+    icon = (board.state == STATE_STOP) ? "greystop" : "stop";
+    td.innerHTML = '<div class="icon icon-'+icon+'" id="but-stop-'+board.name+'" title="Arrêter" onclick="BoardStop(GlobalBoards['+"'"+board.name+"'"+'])"></div>';
     tr.appendChild(td);
     // Cellule bouton config
     td = document.createElement('td');
-    td.innerHTML = '<img id="but-config-'+board.name+'" src="img/bconfig.png" alt="[Paramètres]" title="Paramètres" onclick="configBoard('+"'"+board.name+"'"+')" />';
+    td.innerHTML = '<div class="icon icon-bconfig" id="but-config-'+board.name+'" title="Paramètres" onclick="configBoard('+"'"+board.name+"'"+')"></div>';
     tr.appendChild(td);
     // Cellule bouton remove
     td = document.createElement('td');
-    td.innerHTML = '<img id="but-remove-'+board.name+'" src="img/remove.png" alt="[Supprimer]" title="Supprimer" onclick="configRemove('+"'"+board.name+"'"+')" />';
+    td.innerHTML = '<div class="icon icon-remove" id="but-remove-'+board.name+'" title="Supprimer" onclick="configRemove('+"'"+board.name+"'"+')"></div>';
     tr.appendChild(td);
     // Cellule nombre de posts
     td = document.createElement('td');
@@ -298,12 +298,20 @@ function addConfigLine(board, subpanel) {
                 // self destruction
                 break;
               case STATE_STOP:
-                document.getElementById("but-start-"+name).src = "img/start.png";
-                document.getElementById("but-stop-"+name).src = "img/greystop.png";
+                var icon = document.getElementById("but-start-"+name);
+                removeClass(icon, 'icon-greystart');
+                addClass(icon, 'icon-start');
+                icon = document.getElementById("but-stop-"+name);
+                removeClass(icon, 'icon-stop');
+                addClass(icon, 'icon-greystop');
                 break;
               default:
-                document.getElementById("but-start-"+name).src = "img/greystart.png";
-                document.getElementById("but-stop-"+name).src = "img/stop.png";
+                var icon = document.getElementById("but-start-"+name);
+                removeClass(icon, 'icon-start');
+                addClass(icon, 'icon-greystart');
+                icon = document.getElementById("but-stop-"+name);
+                removeClass(icon, 'icon-greystop');
+                addClass(icon, 'icon-stop');
                 break;
             }
             break;
@@ -325,12 +333,14 @@ var config_sections = [
 // Creation du panneau de config
 // Onglets du panneau de config
 function createConfigTabs(panel) {
+    /*
     var head1 = document.createElement('div');
     head1.className = 'panel-header'; // setAttribute('class', "panel-header");
     head1.innerHTML = 'OnlineCoinCoin '+VERSION+' - Configuration';
     head1.innerHTML += ' <img src="img/closeok.png" alt="[Ok]" title="Enregistrer les changements et fermer" onclick="saveConfig()" />';
     head1.innerHTML += ' <img src="img/cancel.png" alt="[Annuler]" title="Annuler les changements et fermer" onclick="closeConfig()" />';
     panel.appendChild(head1);
+    */
     var tabbar = document.createElement('div');
     tabbar.className = "panel-tabs";
     panel.appendChild(tabbar);
@@ -456,7 +466,7 @@ function createConfigPanel(cpanel) {
     panel.appendChild(head3);
     subpanel = document.createElement('div');
     subpanel.appendChild(triblist);
-    subpanel.innerHTML += '<img src="img/addboard.png" alt="[+]" title="Ajouter cette tribune" onclick="addNewBoard()" />';
+    subpanel.innerHTML += '<div class="icon icon-newtab" style="float:left" title="Ajouter cette tribune" onclick="addNewBoard()"></div>';
     subpanel.innerHTML += '<p><a href="#" onclick="addPersoBoard()">Définir une nouvelle tribune perso</a></p>';
     panel.appendChild(subpanel);
     
@@ -529,6 +539,7 @@ function configBoard(name) {
     var panel = board.configPanel();
     board.tmpcookieback = board.cookie;
     document.getElementsByTagName("body")[0].appendChild(panel);
+    panel.style.display = 'block';
 }
 
 // Enlève une ligne dans le tableau de configuration des tribunes actives

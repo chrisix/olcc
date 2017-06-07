@@ -1,0 +1,159 @@
+/************************************************
+Styles de base pour olcc.
+Ce fichier rassemble les définitions CSS qui ont
+un rôle plutôt "fonctionnel" pour l'interface,
+tandis que les feuilles de style type "truc" et
+"truc-layout" se concentrent sur l'apparence.
+*************************************************/
+
+#toolbar {
+  z-index: 5;
+}
+
+/* Styles pour les "boîtes de dialogue" */
+.panel {
+  display: none;
+  z-index: 100;
+}
+.panel header {
+  height: 21px;
+}
+.panel header h2 {
+  float: left;
+  margin: 0;
+  padding: 2px 10px 2px 10px;
+}
+.closebutton {
+  float: right;
+  background-image: url(img/cancel.png);
+}
+.validbutton {
+  float: right;
+  background-image: url(img/closeok.png);
+}
+.panel-tabs .panel-tab {
+  cursor: default;
+}
+
+/* Styles et images par défaut pour les icones et boutons */
+.icon, .tab-action, .filter-action {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+}
+.icon:hover, .tab-action:hover, .filter-action:hover {
+  background-color: #aaa;
+}
+.icon-config {
+  background-image: url(img/config.png);
+}
+.icon-attach {
+  background-image: url(img/attach.png);
+}
+.icon-balltrap {
+  background-image: url(img/coin.png);
+}
+.icon-bossmode {
+  background-image: url(img/bossmode.png);
+}
+.icon-newtab {
+  background-image: url(img/addboard.png);
+}
+.icon-alltabs {
+  background-image: url(img/dispall.png);
+}
+.icon-refreshall {
+  background-image: url(img/refreshall.png);
+}
+.icon-nofilter {
+  background-image: url(img/nofilter.png);
+}
+.icon-start {
+  background-image: url(img/start.png);
+}
+.icon-greystart {
+  background-image: url(img/greystart.png);
+}
+.icon-stop {
+  background-image: url(img/stop.png);
+}
+.icon-greystop {
+  background-image: url(img/greystop.png);
+}
+.icon-bconfig {
+  background-image: url(img/bconfig.png);
+}
+.icon-remove {
+  background-image: url(img/remove.png);
+}
+
+.sndbutton {
+  height: 20px;
+  width: 20px;
+  float: right;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  vertical-align: middle;
+}
+.play {
+  background-image: url('img/control_play.png');
+}
+.play:hover {
+  background-image: url('img/control_play_blue.png');
+}
+.stop {
+  display: none;
+  background-image: url('img/control_stop.png');
+}
+.stop:hover {
+  background-image: url('img/control_stop_blue.png');
+}
+
+
+/* Pour avoir un pointeur quand on survole les onglets ou les filtres */
+.tab, .filter, .tab-name {
+  cursor: pointer;
+}
+
+#palmipede {
+  z-index: 1;
+}
+#post-form {
+}
+#totoz-manager {
+  z-index: 10;
+}
+
+#newboard LI {
+  cursor: pointer;
+}
+
+/* Styles du pinnipede */
+#popup {
+  z-index: 75;
+  display: none;
+}
+#pinnipede {
+  z-index: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+IMG.totoz {
+  position: absolute;
+  z-index: 99;
+}
+.totoz:hover {
+  cursor: pointer;
+}
+
+SPAN.clock, .clockref {
+  cursor: default;
+}
+SPAN.canard {
+  cursor: crosshair;
+}

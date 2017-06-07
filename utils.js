@@ -71,7 +71,7 @@ var NOTIF_ANSWER = 'new answer';
 var NOTIF_BIGORNO = 'bigorno';
 var NOTIF_BIGORNO_ALL = 'bigorno all';
 
-/* Dézinguage du support IE6
+// AFR: Dézinguage du support IE6
 var is_ie = true;
 try {
   var plop = new ActiveXObject('Microsoft.XMLHTTP');
@@ -79,7 +79,7 @@ try {
 catch (err) {
   is_ie = false;
 }
-*/
+// */
 
 var favicon = {
     change: function(iconURL, optionalDocTitle) {
@@ -188,7 +188,8 @@ function addCSSClass(ruleName, cssText) {
                     if (document.styleSheets[s].addRule) {
                         document.styleSheets[s].addRule('.'+ruleName, cssText, 0); // IE style
                     } else {
-                        document.styleSheets[s].insertRule('.'+ruleName+' {'+cssText+'}', 0); // Moz style.
+                        // console.log("s="+s+", styleSheet[s]="+document.styleSheets[s].href);
+                        document.styleSheets[s].insertRule('.'+ruleName+' {'+cssText+'}', document.styleSheets[s].cssRules.length); // Moz style.
                     }
                 // }
             }
@@ -570,39 +571,30 @@ function stopSample() {
 
 var GlobalIsPlaying = null;
 var GlobalSoundQueue = new Array();
-var myListener = new Object();
-var curExtr = null;
-myListener.onInit = function() {
-    this.position = 0;
-};
-myListener.onUpdate = function() {
-    if (this.isPlaying != "true") {
-        if (GlobalIsPlaying) stopSample();
-        sound_queue();
-    }
-};
+
 function sound_play(sound) {
     // if (GlobalIsPlaying) sound_stop();
-    if (!GlobalSoundQueue.contains(sound)) {
+    if (sound.substr(-7) != "(aucun)" && !GlobalSoundQueue.contains(sound)) {
         GlobalSoundQueue.push(sound);
-        if (myListener.isPlaying != "true") sound_queue();
+        if (document.getElementById('player').paused)
+          sound_queue();
     }
 }
 function sound_queue() {
     if (GlobalSoundQueue.length == 0) return;
-    // alert(GlobalSoundQueue);
-    var flash = document.getElementById("myFlash");
-    flash.SetVariable("method:setVolume", ""+settings.value('sound_volume'));
-    flash.SetVariable("method:setUrl", GlobalSoundQueue.shift());
-    flash.SetVariable("method:play", "");
-    flash.SetVariable("enabled", "true");
+    var player = document.getElementById("player");
+    player.volume = settings.value('sound_volume')/100.0;
+    player.src = GlobalSoundQueue.shift();
+    player.play();
 }
 function sound_stop() {
-    document.getElementById("myFlash").SetVariable("method:stop", "");
-    myListener.position = 0;
-    // GlobalIsPlaying = null;
+    document.getElementById("player").pause();
 }
-
+function sound_ended() {
+    if (GlobalIsPlaying) stopSample();
+    sound_queue();
+}
+ 
 function to_url(chaine) {
     return str_replace('&', '%26', chaine);
 }
@@ -631,6 +623,9 @@ if (typeof Element.prototype.removeEventListener === 'undefined') {
       e = 'on' + e;
       return this.detachEvent(e, callback);
     };
+}
+function addEvent(object, event, callback, flag) {
+  object.addEventListener(event, callback)
 }
 
 // Divers ajouts pour compatibilité IE/reste du monde

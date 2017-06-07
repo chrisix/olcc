@@ -389,7 +389,7 @@ function BoardTabAddTab (boardTab) {
     text.setAttribute("id", "tab-notif-"+board.name);
     addClass(text, "tab-notif");
     tab.appendChild(text);
-    document.getElementById("tabs-boards").appendChild(tab);
+    document.getElementById("tabs").appendChild(tab);
     boardTab.visible = true;
     board.addView(boardTab);
     board.addView(window);
@@ -514,7 +514,7 @@ function BoardTabRemoveTab(boardTab) {
         // on retire le tab des vues de la board
         boardTab.board.removeView(boardTab);
         boardTab.board.removeView(window);
-        document.getElementById("tabs-boards").removeChild(boardTab.tab());
+        document.getElementById("tabs").removeChild(boardTab.tab());
         if (is_ie || no_xpath) {
             var posts = IE_selectNodes(["pinni-"+boardTab.board.name]);
         }
@@ -547,12 +547,12 @@ BoardTab.prototype.removeTab = function () { return BoardTabRemoveTab(this); };
 function BoardConfigPanel(board) {
     var panel = document.createElement("div");
     panel.setAttribute('id', "config-panel-"+board.name);
-    panel.className = 'config-panel'; // setAttribute('class', "config-panel");
-    var head = document.createElement('div');
-    head.className = 'panel-header'; // setAttribute('class', "panel-header");
-    head.innerHTML = 'Paramètres pour la tribune '+board.name;
-    head.innerHTML += ' <img src="img/closeok.png" title="Enregistrer les changements et fermer" onclick="saveBoardConfig('+"'"+board.name+"'"+')" />';
-    head.innerHTML += ' <img src="img/cancel.png" title="Annuler les changements et fermer" onclick="cancelBoardConfig('+"'"+board.name+"'"+')" />';
+    panel.className = 'config-panel panel'; // setAttribute('class', "config-panel");
+    var head = document.createElement('header');
+    // head.className = 'panel-header'; // setAttribute('class', "panel-header");
+    head.innerHTML = '<h2>Paramètres pour la tribune '+board.name+'</h2>';
+    head.innerHTML += ' <div class="icon closebutton" title="Annuler les changements et fermer" onclick="cancelBoardConfig('+"'"+board.name+"'"+')"></div>';
+    head.innerHTML += ' <div class="icon validbutton" title="Enregistrer les changements et fermer" onclick="saveBoardConfig('+"'"+board.name+"'"+')"></div>';
     panel.appendChild(head);
     var subpanelw = document.createElement('table');
     subpanelw.style.width = "100%";
