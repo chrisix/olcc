@@ -66,6 +66,7 @@ aside section {
 #tabs {
 }
 #filters {
+  margin-top: 15px;
 }
 .tab {
   padding: 2px 5px 2px 5px;
@@ -167,7 +168,7 @@ aside section {
 /* la boîte "ajouter une tribune" */
 #newboard {
   position: fixed;
-  top: 105px;
+  top: 65px;
   left: 150px;
   max-height: 400px;
   overflow: auto;
@@ -232,4 +233,7 @@ aside section {
 .subpanel {
   max-height: 420px;
   overflow: auto;
+}
+TD.subpanel:first-child {
+  text-align: right;
 }

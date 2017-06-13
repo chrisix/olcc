@@ -1,0 +1,452 @@
+/*****************
+* Style "console"
+******************/
+
+@import url("base.css");
+@import url("bottomtabs-layout.css");
+
+html, body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 90%;
+  background-color: #F2F1F0;
+}
+
+/* Styles pour le header et les liens de navigation */
+body > header h1 {
+  font-size: 1em;
+  font-weight: normal;
+}
+body > header:hover h1 {
+  border: 1px solid #3DAEE9;
+  background-color: #3DAEE9;
+  color: #F2F1F0;
+}
+nav {
+  background-color: #F2F1F0;
+  border: 1px solid #C0C0C0;
+  box-shadow: 2px 2px 2px #777;
+}
+nav li {
+  border: 1px solid transparent;
+}
+nav li:hover {
+  border: 1px solid #3DAEE9;
+  background-color: #3DAEE9;
+}
+nav a:link, nav a:visited, nav a:hover {
+  text-decoration: none;
+  color: #000;
+  font-weight: normal;
+}
+nav a:hover {
+  color: #F2F1F0;
+}
+nav a:after {
+  content: "...";
+}
+
+/* Icones */
+.icon:hover, .tab-action:hover, .filter-action:hover {
+  background-color: #3DAEE9;
+}
+#toolbar DIV.icon {
+  border-radius: 0;
+}
+.icon-config {
+  background-image: url(img/config24.png);
+}
+.icon-attach {
+  background-image: url(img/attach24.png);
+}
+.icon-balltrap {
+  background-image: url(img/coin.png);
+}
+.icon-bossmode {
+  background-image: url(img/bossmode24.png);
+}
+.closebutton {
+  background-image: url(img/console-close.png);
+}
+  
+
+#totoz-manager {
+  top: 176px;
+  left: 0;
+  width: 165px;
+  height: 32px;
+  background-image: url(img/totoz24.png);
+  background-position: 4px 3px;
+  background-repeat: no-repeat;
+  padding-left: 32px;
+}
+#totoz-manager:hover {
+  background-color: #3DAEE9;
+}
+#totoz-manager FORM {
+  display: none;
+}
+#totoz-manager:hover FORM {
+  display: block;
+}
+#totoz-form {
+  height: 24px;
+  background-color: #EFEFEF;
+  border: 1px solid #999;
+  border-left: none;
+  padding: 4px 4px 4px 10px;
+}
+#totoz-panel {
+  top: 204px;
+  left: 32px;
+  max-height: 550px;
+}
+#totoz-panel:hover ~ #totoz-manager {
+  background-color: #3DAEE9;
+}
+#totoz-panel:hover ~ #totoz-manager FORM {
+  display:block;
+}
+
+/* On vire les labels et les boutons des formulaires (palmi, cherche totoz) */
+label, input[type="submit"] {
+  display: none;
+}
+input, select {
+  margin: 1px; 
+  border: 1px solid grey;
+  font-family: arial, sans-serif;
+  font-size: 100%;
+  color: black;
+}
+
+/* Styles s'appliquant aux posts dans le pinnipede */
+/* Liens */
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #BD93F9;
+}
+a:visited {
+  font-weight: normal;
+}
+a:link, a:focus, a:active {
+  color: #BD93F9;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.totoz {
+  color: #50FA7B;
+  font-weight: 700;
+}
+.totoz:hover {
+  text-decoration: underline;
+}
+
+/* Les onglets tribunes et filtres */
+#tabs {
+  /* border-left: 1px solid #C1C0BD; */
+  /* border-top: 1px solid #C1C0BD; */
+}
+.tab {
+  border: 1px solid #C1C0BD;
+  border-top: 1px solid transparent;
+  border-radius: 0px 0px 4px 4px;
+  font-weight: bold;
+}
+.tab:hover {
+  border: 1px solid #77c;
+  border-top: 1px solid transparent;
+  opacity: 1;
+}
+.tab-name:hover {
+  color: #008;
+}
+.tab-notif {
+  color: #A00;
+  font-weight: bold;
+}
+.tab-hidden {
+  font-weight: normal;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #C1C0BD;
+  border-right: 1px solid #C1C0BD;
+  background-color: #F2F1F0!important;
+  opacity: 0.6;
+}
+tab-hidden:hover {
+  opacity: 1;
+}
+
+.filter {
+  color: #555;
+  background-color: #C8C8C8;
+  border: 1px solid #C1C0BD;
+  border-radius: 4px 4px 0px 0px;
+}
+.filter:hover {
+  color: #000;
+  background-color: #DADADA;
+}
+.filter-active {
+  font-weight: bold;
+  color: #000;
+  background-color: #F2F1F0;
+  border: 1px solid #C1C0BD;
+  border-bottom: 1px solid transparent;
+}
+.filter-active:hover {
+  background-image: url(img/closetab.png);
+  background-position: 120px 5px;
+  background-repeat: no-repeat;
+  background-color: #E9F2FB;
+}
+
+/* Le palmipede et ses champs de saisie */
+#palmipede {
+  border: none;
+  border-left: 1px solid #C1C0BD;
+  background-color: #282A36;
+  z-index: 10;
+}
+#post-form {
+  right: 10px;
+}
+#palmipede FORM, #palmipede FORM * {
+  vertical-align: middle;
+}
+#palmi-list {
+  border: none;
+  width: auto!important;
+  font-family: "Lucida console", "Courier new", monospace;
+  background: url(img/consoleprompt.png) no-repeat center left, url(img/consoletilde.png) no-repeat center right;
+  background-color: #282A36;
+  padding: 2px 15px 2px 40px;
+  color: #FF0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+#palmi-message {
+  border: none;
+  background: url(img/noir.png) no-repeat!important;
+  background-position: 0px 10px;
+  color: #eee;
+  font-family: "Lucida console", "Courier new", monospace;
+}
+
+/* Pinipede et styles des posts */
+#pinnipede {
+  font-family: "Lucida console", "Courier new", monospace;
+  background-color: #F2F1F0;
+  color: #eee;
+  padding: 3px 0px 3px 0px;
+  border: none;
+  border-left: 1px solid #C1C0BD;
+  border-top: 1px solid #C1C0BD;
+  border-radius: 3px 3px 0 0;
+  font-size: small;
+}
+#pinnipede DIV {
+  border-left: 4px solid transparent;
+}
+DIV.post {
+  /* float: right;
+  width: 100%; */
+  margin-left: 10px;
+  padding: 0px 4px 0px 5px;
+  background-color: #282A36!important;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent; 
+  /* opacity: 0.85; */
+}
+SPAN.clock {
+  font-weight: bold;
+}
+.clockref {
+  color: #8BE9FD;
+  border: 1px solid transparent;
+}
+SPAN.login, SPAN.ua {
+  display: inline-block;
+  vertical-align: bottom;  
+  max-width: 120px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+SPAN.login {
+  color: #FF5555;
+}
+SPAN.ua {
+  color: #FFB86C;
+}
+.message:before {
+  content: "- ";
+}
+.newpost .post {
+  background-color: #585A76!important;
+}
+.newpost .message {
+  font-weight: normal;
+}
+.newpost .post.hilight {
+  background-color: #FF0!important; 
+}
+SPAN.bigorno {
+  border: 1px solid red;
+}
+
+DIV.bigorno DIV SPAN.clock {
+  color: #000;
+  background-color: #FFFFFF;
+}
+
+SPAN.canard {
+  font-weight: bold;
+  color: #93C;
+}
+
+DIV.answer DIV SPAN.clock {
+  color: #000;
+  background-color: #FF5555;
+}
+
+DIV.mypost DIV SPAN.login, DIV.mypost DIV SPAN.ua {
+  font-weight: bold;
+}  
+SPAN.mypost {
+  color: #FF5555!important;
+  font-weight: bold;
+}
+
+
+DIV.hilight DIV {
+  background-color: #FF0!important; 
+  color: #000
+}
+SPAN.hilight, DIV.hilight DIV SPAN.clockref, #popup DIV SPAN.clockref {
+  background-color: #FF0!important;
+  color: #04CEFB;
+}
+DIV.hilight DIV SPAN.ua, #popup DIV SPAN.ua {
+  color: #FFA746;
+}
+#popup {
+  background-color: #FF0!important;
+  font-family: "Lucida console", "Courier new", monospace;
+  color: #000;
+}
+#popup DIV {
+  background-color: #FF0!important;
+}
+
+.plonk {
+  color: #777!important;
+  opacity: 0.8;
+}
+.plonk .post {
+  background-color: #ddd!important;
+}
+
+/* Panneaux / boites de dialogue */
+@keyframes slideInLeft {
+  0%   { transform: translateX(-900px); }
+  100% { transform: translateX(0); }
+}
+@keyframes slideInBottom {
+  0%   { transform: translateY(+900px); }
+  100% { transform: translateY(0); }
+}
+.panel {
+  background-color: #efefef;
+  border: 1px solid grey;
+  border-radius: 3px;
+  animation: slideInLeft 400ms forwards;
+}
+.panel header {
+  background: url(img/console-headbg.png) 4px 2px no-repeat #56534C;
+  color: #DBDAD5;
+}
+.panel header h2 {
+  font-weight: bold;
+  font-size: 1em;
+  position: absolute;
+  float: left;
+  margin-left: 50px;
+}
+.panel header DIV.icon {
+  float: left;
+  margin-left: 3px;
+}
+
+/* Styles pour la fenêtre de config */
+.panel-tabs {
+  background-color: #fff;
+  border: 1px solid #C0C0C0;
+  border-radius: 3px;
+  text-align: center;
+}
+.panel-tabs .panel-tab {
+  font-size: 90%;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+}
+.panel-tab:hover {
+  background-color: #E9F2FB;
+}
+.panel-tab IMG, .panel-tab IMG:hover {
+  background-color: transparent!important;
+}
+.tab-active {
+  background-color: #3DAEE9!important;
+}
+.panel-header {
+  font-weight: bold;
+  padding: 5px 2px 5px 2px;
+  margin: 3px 0 3px 0;
+  border-bottom: 1px solid #C0C0C0;
+}
+td.subpanel {
+  text-align: left;
+}
+td.panel-board {
+  color: #000;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-weight: bolder;
+  z-index: 90;
+}
+td.cstate {
+  text-align: center;
+  color: #0A246A;
+  width: 65px;
+}
+td.cinfo {
+  text-align: right;
+}
+
+#attach {
+}
+#newboard {
+  animation: slideInBottom 400ms forwards;
+}
+#newboard LI {
+  list-style-type: none;
+}
+#newboard LI:hover {
+  background-color: #3DAEE9;
+}
+
+#totoz-panel {
+  animation: none;
+}
+#totoz-list {
+}
+#totoz-list TR:hover {
+  background-color: #3DAEE9;
+}
+#totoz-list TD {
+}
+

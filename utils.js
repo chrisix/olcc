@@ -186,7 +186,7 @@ function addCSSClass(ruleName, cssText) {
             for (var s=document.styleSheets.length; s--;) {
                 // if (!document.styleSheets[s].disabled) {
                     if (document.styleSheets[s].addRule) {
-                        document.styleSheets[s].addRule('.'+ruleName, cssText, 0); // IE style
+                        document.styleSheets[s].addRule('.'+ruleName, cssText, document.styleSheets[s].cssRules.length); // IE style
                     } else {
                         // console.log("s="+s+", styleSheet[s]="+document.styleSheets[s].href);
                         document.styleSheets[s].insertRule('.'+ruleName+' {'+cssText+'}', document.styleSheets[s].cssRules.length); // Moz style.
@@ -388,7 +388,7 @@ function TextBox(c_id, txt, val, size) {
       but.setAttribute('size',size);
     }
     else {
-      but.style.width = "98%";
+      but.style.width = "95%";
     }
     but.setAttribute('value',val);
 

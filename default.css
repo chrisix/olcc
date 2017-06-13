@@ -22,7 +22,7 @@ body > header h1 {
   font-size: 1em;
   font-weight: normal;
 }
-nav a:link {
+nav a:link, nav a:visited {
   font-weight: bold;
   text-decoration: none;
   color: #bbb;
@@ -92,7 +92,7 @@ a:hover {
 .tab-hidden {
   font-weight: normal;
   opacity: 0.5;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #77c;
 }
 .tab-hidden:hover {
   opacity: 1;
@@ -102,7 +102,7 @@ a:hover {
 
 .filter {
   background-color: #eee;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #77c;
 }
 .filter:hover {
   text-decoration: underline;
@@ -140,15 +140,17 @@ a:hover {
   color: #000;
   padding: 3px 0px 3px 0px;
   border: none;
-  border-left: 1px solid #ccc;
+  border-left: 1px solid #77c;
   font-size: small;
 }
 #popup {
-  background-image: url(img/jaune.gif)!important;
+  /* background-image: url(img/jaune.gif)!important; */
+  background-color: #FFD202!important;
   border: 2px solid orange;
 }
 #popup DIV {
-  background-image: url(img/jaune.gif)!important;
+  /* background-image: url(img/jaune.gif)!important; */
+  background-color: #FFD202!important;
 }
 #pinnipede A, #popup A {
   text-decoration: none;
@@ -216,9 +218,9 @@ SPAN.bigorno {
 }
 
 DIV.bigorno {
-  background-image: url('img/golcc-bigo.png')!important;
+  background-image: url('img/ico_bigoall.png')!important;
   background-repeat: no-repeat;
-  background-position: 0px 1px;
+  background-position: 3px 1px;
 }
 
 SPAN.canard {
@@ -227,9 +229,9 @@ SPAN.canard {
 }
 
 DIV.answer {
-  background-image: url('img/golcc-star-b.png')!important;
+  background-image: url('img/comment.png')!important;
   background-repeat: no-repeat;
-  background-position: 0px 1px;
+  background-position: 1px 1px;
 }
 
 SPAN.mypost {
@@ -238,14 +240,14 @@ SPAN.mypost {
 }
 
 DIV.mypost {
-  background-image: url('img/golcc-star.png')!important;
+  background-image: url('img/bullet_go.png')!important;
   background-repeat: no-repeat;
-  background-position: 0px 1px;
+  background-position: 2px 1px;
 }
 
 DIV.hilight DIV {
-  /* background-color: #FFD202!important; */
-  background-image: url(img/jaune.gif)!important;
+  background-color: #FFD202!important; 
+  /* background-image: url(img/jaune.gif)!important; */
   border-top: 1px solid #FA0!important;
   border-bottom: 1px solid #FA0!important;
 }

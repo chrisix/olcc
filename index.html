@@ -2,7 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <link title="default"  rel="stylesheet"           href="default.css"  type="text/css" />
+  <link title="console"  rel="stylesheet"           href="console.css"  type="text/css" />
+  <link title="default"  rel="alternate stylesheet" href="default.css"  type="text/css" />
   <link title="oldolcc"  rel="alternate stylesheet" href="oldolcc.css"  type="text/css" />
   <link title="lefttabs" rel="alternate stylesheet" href="lefttabs.css" type="text/css" />
   <link title="sfw"      rel="alternate stylesheet" href="sfw.css"      type="text/css" />
@@ -39,23 +40,16 @@
       <div class="icon icon-bossmode" onclick="bossMode()"     title="Panic!"></div>
     </section>
   
-    <section id="tabs">
-    </section>
-    
     <section id="tabs-actions">
       <div class="tab-action icon-newtab"     onclick="newBoard()"   title="Ajouter une tribune"></div>
       <div class="tab-action icon-alltabs"    onclick="dispAll()"    title="Afficher tous les onglets"></div>
       <div class="tab-action icon-refreshall" onclick="refreshAll()" title="Refresh de tous les onglets"></div>
     </section>
     
+    <section id="tabs">
+    </section>
+    
     <section id="filters">
-      <!--
-      <div id="filter-mypost"   class="filter">Mes posts</div>
-      <div id="filter-answer"   class="filter">Réponses</div>
-      <div id="filter-bigorno"  class="filter">Bigornophone</div>
-      <div id="filter-newpost"  class="filter">Nouveaux</div>
-      <div id="filter-pasplonk" class="filter filter-active">Plonk</div>
-      -->
     </section>
     
     <section id="filters-actions">
@@ -78,15 +72,6 @@
     </form>
   </section>
     
-  <section id="totoz-manager">
-    <form id="totoz-form">
-      <label for="totoz-search">Cherche&nbsp;totoz&nbsp;:</label>
-      <input id="totoz-search" name="totoz" type="search" placeholder="Cherche totoz" />
-      <input type="submit" value="Go" />
-      <img id="totoz-status" src="img/blank.gif" />
-    </form>
-  </section>
-
   <section id="totoz-panel" class="panel">
     <header>
       <h2>Totoz Manager</h2>
@@ -99,6 +84,15 @@
     </p>
   </section>
     
+  <section id="totoz-manager">
+    <form id="totoz-form">
+      <label for="totoz-search">Cherche&nbsp;totoz&nbsp;:</label>
+      <input id="totoz-search" name="totoz" type="search" placeholder="Cherche totoz" />
+      <input type="submit" value="Go" />
+      <img id="totoz-status" src="img/blank.gif" />
+    </form>
+  </section>
+
   <section id="config-panel" class="panel">
     <header>
       <h2>Configuration</h2>
