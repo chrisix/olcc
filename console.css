@@ -6,40 +6,39 @@
 @import url("bottomtabs-layout.css");
 
 html, body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   font-size: 90%;
-  background-color: #F2F1F0;
+  background-color: #41403B;
+  color: #000;
 }
 
 /* Styles pour le header et les liens de navigation */
 body > header h1 {
   font-size: 1em;
-  font-weight: normal;
+  font-weight: bold;
+  color: #E6E3DC;
 }
 body > header:hover h1 {
-  border: 1px solid #3DAEE9;
-  background-color: #3DAEE9;
-  color: #F2F1F0;
+  border: 1px solid #E95420;
+  background-color: #F08763;
+  color: #E6E3DC;
 }
 nav {
-  background-color: #F2F1F0;
-  border: 1px solid #C0C0C0;
-  box-shadow: 2px 2px 2px #777;
+  background-color: #41403B;
+  border: 1px solid #46474B;
+  box-shadow: 2px 2px 2px #EEE8D5;
 }
 nav li {
   border: 1px solid transparent;
 }
 nav li:hover {
-  border: 1px solid #3DAEE9;
-  background-color: #3DAEE9;
+  border: 1px solid #E95420;
+  background-color: #F08763;
 }
 nav a:link, nav a:visited, nav a:hover {
   text-decoration: none;
-  color: #000;
-  font-weight: normal;
-}
-nav a:hover {
-  color: #F2F1F0;
+  color: #E6E3DC;
+  font-weight: bold;
 }
 nav a:after {
   content: "...";
@@ -47,7 +46,7 @@ nav a:after {
 
 /* Icones */
 .icon:hover, .tab-action:hover, .filter-action:hover {
-  background-color: #3DAEE9;
+  background-color: #E95420;
 }
 #toolbar DIV.icon {
   border-radius: 0;
@@ -72,7 +71,7 @@ nav a:after {
 #totoz-manager {
   top: 176px;
   left: 0;
-  width: 165px;
+  width: 32px;
   height: 32px;
   background-image: url(img/totoz24.png);
   background-position: 4px 3px;
@@ -80,7 +79,8 @@ nav a:after {
   padding-left: 32px;
 }
 #totoz-manager:hover {
-  background-color: #3DAEE9;
+  background-color: #E95420;
+  width: 165px;
 }
 #totoz-manager FORM {
   display: none;
@@ -89,9 +89,9 @@ nav a:after {
   display: block;
 }
 #totoz-form {
-  height: 24px;
-  background-color: #EFEFEF;
-  border: 1px solid #999;
+  height: 23px;
+  background-color: #41403B;
+  border: 1px solid #E95420;
   border-left: none;
   padding: 4px 4px 4px 10px;
 }
@@ -101,7 +101,8 @@ nav a:after {
   max-height: 550px;
 }
 #totoz-panel:hover ~ #totoz-manager {
-  background-color: #3DAEE9;
+  background-color: #E95420;
+  width: 165px;
 }
 #totoz-panel:hover ~ #totoz-manager FORM {
   display:block;
@@ -113,55 +114,26 @@ label, input[type="submit"] {
 }
 input, select {
   margin: 1px; 
-  border: 1px solid grey;
-  font-family: arial, sans-serif;
+  border: 1px solid #BB94A9;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 100%;
-  color: black;
-}
-
-/* Styles s'appliquant aux posts dans le pinnipede */
-/* Liens */
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #BD93F9;
-}
-a:visited {
-  font-weight: normal;
-}
-a:link, a:focus, a:active {
-  color: #BD93F9;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-.totoz {
-  color: #50FA7B;
-  font-weight: 700;
-}
-.totoz:hover {
-  text-decoration: underline;
 }
 
 /* Les onglets tribunes et filtres */
 #tabs {
-  /* border-left: 1px solid #C1C0BD; */
-  /* border-top: 1px solid #C1C0BD; */
 }
 .tab {
-  border: 1px solid #C1C0BD;
+  border: 1px solid #D6D3CF;
   border-top: 1px solid transparent;
   border-radius: 0px 0px 4px 4px;
   font-weight: bold;
 }
 .tab:hover {
-  border: 1px solid #77c;
+  border: 1px solid #E6E3DC;
   border-top: 1px solid transparent;
-  opacity: 1;
 }
 .tab-name:hover {
-  color: #008;
+  color: #E95420;
 }
 .tab-notif {
   color: #A00;
@@ -169,102 +141,139 @@ a:hover {
 }
 .tab-hidden {
   font-weight: normal;
+  color: #333333;
   border: 1px solid transparent;
-  border-bottom: 1px solid #C1C0BD;
-  border-right: 1px solid #C1C0BD;
-  background-color: #F2F1F0!important;
-  opacity: 0.6;
+  border-bottom: 1px solid #D6D3CF;
+  border-right: 1px solid #D6D3CF;
+  background-color: #C6C1BB!important;
 }
-tab-hidden:hover {
-  opacity: 1;
+.tab-hidden:hover {
+  background-color: #DAD7D3!important;
+  color: #000;
 }
 
 .filter {
-  color: #555;
-  background-color: #C8C8C8;
-  border: 1px solid #C1C0BD;
+  color: #333333;
+  background-color: #C6C1BB;
+  border: 1px solid #D6D3CF;
   border-radius: 4px 4px 0px 0px;
 }
 .filter:hover {
   color: #000;
-  background-color: #DADADA;
+  background-color: #DAD7D3;
 }
 .filter-active {
   font-weight: bold;
   color: #000;
-  background-color: #F2F1F0;
-  border: 1px solid #C1C0BD;
+  background-color: #E6E3DC;
+  border: 1px solid #D6D3CF;
   border-bottom: 1px solid transparent;
 }
 .filter-active:hover {
   background-image: url(img/closetab.png);
   background-position: 120px 5px;
   background-repeat: no-repeat;
-  background-color: #E9F2FB;
+  background-color: #E6E3DC;
+  color: #E95420;
 }
 
 /* Le palmipede et ses champs de saisie */
 #palmipede {
-  border: none;
-  border-left: 1px solid #C1C0BD;
-  background-color: #282A36;
+  background-color: #002B36;
   z-index: 10;
 }
 #post-form {
-  right: 10px;
+  display: block;
+  position: fixed;
+  left: 32px;
+  right: 0px;
+  bottom: 39px;
 }
 #palmipede FORM, #palmipede FORM * {
   vertical-align: middle;
 }
 #palmi-list {
+  position: fixed;
+  bottom: 45px;
+  left: 50px;
   border: none;
-  width: auto!important;
-  font-family: "Lucida console", "Courier new", monospace;
+  font-family: "Ubuntu Mono", "Lucida console", "Courier new", monospace;
   background: url(img/consoleprompt.png) no-repeat center left, url(img/consoletilde.png) no-repeat center right;
-  background-color: #282A36;
-  padding: 2px 15px 2px 40px;
-  color: #FF0;
+  background-color: #002B36;
+  padding: 2px 15px 2px 43px;
+  color: #FFB86C;
   -moz-appearance: none;
   -webkit-appearance: none;
+  z-index: 15;
 }
 #palmi-message {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
   border: none;
-  background: url(img/noir.png) no-repeat!important;
-  background-position: 0px 10px;
-  color: #eee;
-  font-family: "Lucida console", "Courier new", monospace;
+  margin: 0;
+  padding: 8px 5px 9px 175px;
+  background-image: url(img/console-bg-form.png)!important;
+  background-position: top left!important;
+  background-repeat: repeat-y!important;
+  color: #93A1A1;
+  font-family: "Ubuntu Mono", "Lucida console", "Courier new", monospace;
+  z-index: 12;
 }
 
 /* Pinipede et styles des posts */
 #pinnipede {
-  font-family: "Lucida console", "Courier new", monospace;
-  background-color: #F2F1F0;
-  color: #eee;
-  padding: 3px 0px 3px 0px;
+  font-family: "Ubuntu Mono", "Lucida console", "Courier new", monospace;
+  background-color: #002B36;
+  color: #93A1A1;
+  padding: 0px 0px 3px 0px;
   border: none;
-  border-left: 1px solid #C1C0BD;
-  border-top: 1px solid #C1C0BD;
-  border-radius: 3px 3px 0 0;
+  border-top: 4px solid #E6E3DC;
+  border-radius: 4px 4px 0 0;
   font-size: small;
 }
 #pinnipede DIV {
   border-left: 4px solid transparent;
 }
+#popup {
+  font-family: "Ubuntu Mono", "Lucida console", "Courier new", monospace;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #2AA198;
+}
+a:visited {
+  font-weight: normal;
+}
+a:link, a:focus, a:active {
+  color: #2AA198;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.totoz {
+  color: #859900;
+}
+.totoz:hover {
+  text-decoration: underline;
+}
+
 DIV.post {
-  /* float: right;
-  width: 100%; */
   margin-left: 10px;
   padding: 0px 4px 0px 5px;
-  background-color: #282A36!important;
+  background-color: #002B36!important;
   border-bottom: 1px solid transparent;
   border-top: 1px solid transparent; 
-  /* opacity: 0.85; */
 }
 SPAN.clock {
+  color: #EEE8D5;
   font-weight: bold;
 }
 .clockref {
-  color: #8BE9FD;
+  color: #268BD2;
   border: 1px solid transparent;
 }
 SPAN.login, SPAN.ua {
@@ -276,77 +285,68 @@ SPAN.login, SPAN.ua {
   text-overflow: ellipsis;
 }
 SPAN.login {
-  color: #FF5555;
+  color: #CB4B16;
 }
 SPAN.ua {
-  color: #FFB86C;
+  color: #B58900;
 }
 .message:before {
   content: "- ";
 }
-.newpost .post {
-  background-color: #585A76!important;
-}
-.newpost .message {
-  font-weight: normal;
-}
-.newpost .post.hilight {
-  background-color: #FF0!important; 
-}
-SPAN.bigorno {
-  border: 1px solid red;
+DIV.newpost{
+  border-left: 4px solid #E95420!important;
 }
 
+CODE, TT {
+  font-family: "Ubuntu Mono", "Lucida console", "Courier new", monospace;
+  white-space: pre;
+  color: #D33682;
+}
+
+SPAN.bigorno {
+  color: #FFB86C;
+  font-weight: bold;
+}
 DIV.bigorno DIV SPAN.clock {
-  color: #000;
-  background-color: #FFFFFF;
+  color: #FFB86C;
 }
 
 SPAN.canard {
   font-weight: bold;
-  color: #93C;
+  color: #6C71C4;
 }
 
 DIV.answer DIV SPAN.clock {
-  color: #000;
-  background-color: #FF5555;
+  color: #268BD2;
 }
 
 DIV.mypost DIV SPAN.login, DIV.mypost DIV SPAN.ua {
   font-weight: bold;
 }  
 SPAN.mypost {
-  color: #FF5555!important;
+  color: #DC322F!important;
   font-weight: bold;
 }
 
-
-DIV.hilight DIV {
-  background-color: #FF0!important; 
-  color: #000
-}
-SPAN.hilight, DIV.hilight DIV SPAN.clockref, #popup DIV SPAN.clockref {
-  background-color: #FF0!important;
-  color: #04CEFB;
-}
-DIV.hilight DIV SPAN.ua, #popup DIV SPAN.ua {
-  color: #FFA746;
-}
-#popup {
-  background-color: #FF0!important;
-  font-family: "Lucida console", "Courier new", monospace;
-  color: #000;
-}
 #popup DIV {
-  background-color: #FF0!important;
+  padding: 1px 1px 1px 5px;
+}
+.hilight, .hilight DIV, #popup DIV DIV {
+  background-color: #FDF6E3!important; 
+  color: #073642!important;
+}
+.hilight DIV SPAN.clock, #popup DIV SPAN.clock {
+  color: #002B36;
+}
+.hilight.clockref {
+  color: #268BD2!important;
 }
 
-.plonk {
-  color: #777!important;
-  opacity: 0.8;
+.plonk, .plonk SPAN {
+  color: #586E75!important;
 }
 .plonk .post {
-  background-color: #ddd!important;
+  background-color: #073642!important;
 }
 
 /* Panneaux / boites de dialogue */
@@ -359,8 +359,8 @@ DIV.hilight DIV SPAN.ua, #popup DIV SPAN.ua {
   100% { transform: translateY(0); }
 }
 .panel {
-  background-color: #efefef;
-  border: 1px solid grey;
+  background-color: #F1E9ED;
+  border: 1px solid #BB94A9;
   border-radius: 3px;
   animation: slideInLeft 400ms forwards;
 }
@@ -394,13 +394,13 @@ DIV.hilight DIV SPAN.ua, #popup DIV SPAN.ua {
   background-color: transparent;
 }
 .panel-tab:hover {
-  background-color: #E9F2FB;
+  background-color: #F08763;
 }
 .panel-tab IMG, .panel-tab IMG:hover {
   background-color: transparent!important;
 }
 .tab-active {
-  background-color: #3DAEE9!important;
+  background-color: #E95420!important;
 }
 .panel-header {
   font-weight: bold;
@@ -436,7 +436,7 @@ td.cinfo {
   list-style-type: none;
 }
 #newboard LI:hover {
-  background-color: #3DAEE9;
+  background-color: #E95420;
 }
 
 #totoz-panel {
@@ -445,8 +445,7 @@ td.cinfo {
 #totoz-list {
 }
 #totoz-list TR:hover {
-  background-color: #3DAEE9;
+  background-color: #F08763;
 }
 #totoz-list TD {
 }
-

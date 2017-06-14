@@ -749,7 +749,7 @@ function setPalmiTrib(trib) {
 function onChangeTrib() {
     var trib = document.getElementById('palmi-list').value;
     var palmi = document.getElementById('palmi-message');
-    palmi.style.background = GlobalBoards[trib].color;
+    palmi.style.backgroundColor = GlobalBoards[trib].color;
     // update des @tribune des horloges dans le palmi
     var message = palmi.value;
     var offset = 0;

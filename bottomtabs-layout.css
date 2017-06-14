@@ -80,6 +80,7 @@ aside {
   bottom: 15px;
   left: 32px;
   right: 90px;
+  height: 24px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -132,7 +133,7 @@ aside {
   top: 30px;
   left: 32px;
   right: 0;
-  bottom: 74px;
+  bottom: 70px;
   padding: 5px;
 }
 #popup {
@@ -140,16 +141,15 @@ aside {
   top: 30px;
   left: 32px;
   right: 0px;
-  padding: 2px 8px 2px 4px;
 }
 
 /* Palmipède en bas */
 #palmipede {
   position: fixed;
-  bottom: 42px;
+  bottom: 40px;
   left: 32px;
   right: 0;
-  height: 32px;
+  height: 28px;
 }
 #post-form {
   display: flex;
