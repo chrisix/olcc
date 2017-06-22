@@ -167,24 +167,25 @@ DIV.post {
   opacity: 0.85;
 }
 SPAN.clock {
-  display: block;
+  /* display: block;
   float: left;
-  width: 70px;
+  width: 70px; */
   font-weight: bold;
 }
 SPAN.clock:before {
   content: "[";
 }
 SPAN.clock:after {
-  content: "]";
+  content: "] ";
 }
 .clockref {
   color: #00D;
   border: 1px solid transparent;
 }
 SPAN.login {
-  display: block; 
-  float: left;
+  display: inline-block; 
+  vertical-align: middle;
+  /* float: left; */
   width: 100px;
   color: #833;
   overflow: hidden;
@@ -193,8 +194,9 @@ SPAN.login {
 }
 SPAN.ua {
   font-style: italic;
-  display: block;
-  float: left;
+  display: inline-block;
+  vertical-align: middle;
+  /* float: left; */
   width: 100px;
   color: #533;
   overflow: hidden;

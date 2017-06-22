@@ -78,9 +78,9 @@ aside {
 #tabs {
   position: fixed;
   bottom: 15px;
+  height: 25px;
   left: 32px;
   right: 90px;
-  height: 24px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -194,7 +194,6 @@ aside {
 .panel {
   position: absolute;
   border: 1px solid black;
-  box-shadow: 3px 3px 3px #999;
 }
 
 /* la boîte "ajouter une tribune" */
@@ -273,6 +272,7 @@ aside {
 .subpanel {
   max-height: 420px;
   overflow: auto;
+  margin-right: 5px;
 }
 TD.subpanel:first-child {
   text-align: right;

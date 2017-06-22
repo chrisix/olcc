@@ -19,21 +19,27 @@ body > header h1 {
   color: #E6E3DC;
 }
 body > header:hover h1 {
-  border: 1px solid #E95420;
-  background-color: #F08763;
+  border-bottom: 1px solid #804731;
+  border-left: 1px solid #DA754C;
+  border-top: 1px solid #F49169;
+  border-right: 1px solid #D36F46;
+  background-color: #EF7646;
   color: #E6E3DC;
 }
 nav {
   background-color: #41403B;
   border: 1px solid #46474B;
-  box-shadow: 2px 2px 2px #EEE8D5;
+  box-shadow: 3px 3px 3px #1F1E30;
 }
 nav li {
   border: 1px solid transparent;
 }
 nav li:hover {
-  border: 1px solid #E95420;
-  background-color: #F08763;
+  border-bottom: 1px solid #804731;
+  border-left: 1px solid #DA754C;
+  border-top: 1px solid #F49169;
+  border-right: 1px solid #D36F46;
+  background-color: #EF7646;
 }
 nav a:link, nav a:visited, nav a:hover {
   text-decoration: none;
@@ -46,7 +52,7 @@ nav a:after {
 
 /* Icones */
 .icon:hover, .tab-action:hover, .filter-action:hover {
-  background-color: #E95420;
+  background-color: #EF7646;
 }
 #toolbar DIV.icon {
   border-radius: 0;
@@ -58,13 +64,29 @@ nav a:after {
   background-image: url(img/attach24.png);
 }
 .icon-balltrap {
-  background-image: url(img/coin.png);
+  background-image: url(img/coin24.png);
 }
 .icon-bossmode {
   background-image: url(img/bossmode24.png);
 }
 .closebutton {
   background-image: url(img/console-close.png);
+  width: 17px!important;
+  margin-left: 5px!important;
+  margin-right: 0!important;
+}
+.validbutton {
+  background-image: url(img/console-closeok.png);
+  margin-left: 1px!important;
+  width: 17px!important;
+}
+.closebutton:hover {
+  background-image: url(img/console-close-red.png);
+  background-color: transparent!important;
+}
+.validbutton:hover {
+  background-image: url(img/console-closeok-green.png);
+  background-color: transparent!important;
 }
   
 
@@ -105,7 +127,7 @@ nav a:after {
   width: 165px;
 }
 #totoz-panel:hover ~ #totoz-manager FORM {
-  display:block;
+  display: block;
 }
 
 /* On vire les labels et les boutons des formulaires (palmi, cherche totoz) */
@@ -197,7 +219,7 @@ input, select {
   bottom: 45px;
   left: 50px;
   border: none;
-  font-family: "Ubuntu Mono", "Lucida console", "Courier new", monospace;
+  font-family: "Ubuntu Mono", "DejaVu Sans Mono", "Consolas",  "Lucida console", "Courier new", monospace;
   background: url(img/consoleprompt.png) no-repeat center left, url(img/consoletilde.png) no-repeat center right;
   background-color: #002B36;
   padding: 2px 15px 2px 43px;
@@ -216,14 +238,17 @@ input, select {
   background-image: url(img/console-bg-form.png)!important;
   background-position: top left!important;
   background-repeat: repeat-y!important;
-  color: #93A1A1;
-  font-family: "Ubuntu Mono", "Lucida console", "Courier new", monospace;
+  color: #EEE8D5;
+  font-family: "Ubuntu Mono", "DejaVu Sans Mono", "Consolas",  "Lucida console", "Courier new", monospace;
   z-index: 12;
+}
+#palmi-message::placeholder {
+  color: #002B36;
 }
 
 /* Pinipede et styles des posts */
 #pinnipede {
-  font-family: "Ubuntu Mono", "Lucida console", "Courier new", monospace;
+  font-family: "Ubuntu Mono", "DejaVu Sans Mono", "Consolas",  "Lucida console", "Courier new", monospace;
   background-color: #002B36;
   color: #93A1A1;
   padding: 0px 0px 3px 0px;
@@ -236,16 +261,21 @@ input, select {
   border-left: 4px solid transparent;
 }
 #popup {
-  font-family: "Ubuntu Mono", "Lucida console", "Courier new", monospace;
+  font-family: "Ubuntu Mono", "DejaVu Sans Mono", "Consolas",  "Lucida console", "Courier new", monospace;
+}
+
+#zoombox {
+  color: #EEE8D5;
 }
 
 a {
   text-decoration: none;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #2AA198;
 }
 a:visited {
-  font-weight: normal;
+  /* font-weight: normal!important; */
+  color: #1E7C69;
 }
 a:link, a:focus, a:active {
   color: #2AA198;
@@ -270,7 +300,7 @@ DIV.post {
 }
 SPAN.clock {
   color: #EEE8D5;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 .clockref {
   color: #268BD2;
@@ -279,7 +309,7 @@ SPAN.clock {
 SPAN.login, SPAN.ua {
   display: inline-block;
   vertical-align: bottom;  
-  max-width: 120px;
+  width: 120px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -290,29 +320,34 @@ SPAN.login {
 SPAN.ua {
   color: #B58900;
 }
-.message:before {
+/* .message:before {
   content: "- ";
-}
+} */
+/*
+SPAN.ua:after, SPAN.login:after {
+  content: ">";
+} */
+
 DIV.newpost{
   border-left: 4px solid #E95420!important;
 }
 
 CODE, TT {
-  font-family: "Ubuntu Mono", "Lucida console", "Courier new", monospace;
+  font-family: "Ubuntu Mono", "DejaVu Sans Mono", "Consolas",  "Lucida console", "Courier new", monospace;
   white-space: pre;
   color: #D33682;
 }
 
 SPAN.bigorno {
   color: #FFB86C;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 DIV.bigorno DIV SPAN.clock {
   color: #FFB86C;
 }
 
 SPAN.canard {
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #6C71C4;
 }
 
@@ -321,17 +356,17 @@ DIV.answer DIV SPAN.clock {
 }
 
 DIV.mypost DIV SPAN.login, DIV.mypost DIV SPAN.ua {
-  font-weight: bold;
+  /* font-weight: bold; */
 }  
 SPAN.mypost {
   color: #DC322F!important;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 #popup DIV {
   padding: 1px 1px 1px 5px;
 }
-.hilight, .hilight DIV, #popup DIV DIV {
+.hilight DIV, #popup DIV DIV {
   background-color: #FDF6E3!important; 
   color: #073642!important;
 }
@@ -339,6 +374,7 @@ SPAN.mypost {
   color: #002B36;
 }
 .hilight.clockref {
+  background-color: #FDF6E3!important; 
   color: #268BD2!important;
 }
 
@@ -360,12 +396,13 @@ SPAN.mypost {
 }
 .panel {
   background-color: #F1E9ED;
-  border: 1px solid #BB94A9;
-  border-radius: 3px;
+  /* border: 1px solid #BB94A9; */
+  border-radius: 6px 6px 0 0;
   animation: slideInLeft 400ms forwards;
+  box-shadow: 3px 3px 3px #1F1E30;
 }
 .panel header {
-  background: url(img/console-headbg.png) 4px 2px no-repeat #56534C;
+  background: url(img/console-headbg.png) 5px 2px no-repeat #56534C;
   color: #DBDAD5;
 }
 .panel header h2 {
@@ -380,10 +417,27 @@ SPAN.mypost {
   margin-left: 3px;
 }
 
+.panel INPUT:focus {
+  border: 1px solid #DB815D;
+  border-radius: 2px;
+}
+.panel INPUT::selection {
+  background-color: #EF7646;
+  color: #fff;
+}
+.panel INPUT::-moz-selection {
+  background-color: #EF7646;
+  color: #fff;
+}
+.panel SELECT OPTION:checked {
+  background: #EF7646 linear-gradient(0deg, #EF7646 0%, #EF7646 100%);
+  color: #fff;
+}
+
 /* Styles pour la fenêtre de config */
 .panel-tabs {
   background-color: #fff;
-  border: 1px solid #C0C0C0;
+  border: 1px solid #BB94A9;
   border-radius: 3px;
   text-align: center;
 }
@@ -394,19 +448,19 @@ SPAN.mypost {
   background-color: transparent;
 }
 .panel-tab:hover {
-  background-color: #F08763;
+  background-color: #FF996E;
 }
 .panel-tab IMG, .panel-tab IMG:hover {
   background-color: transparent!important;
 }
 .tab-active {
-  background-color: #E95420!important;
+  background-color: #EF7646!important;
 }
 .panel-header {
   font-weight: bold;
   padding: 5px 2px 5px 2px;
   margin: 3px 0 3px 0;
-  border-bottom: 1px solid #C0C0C0;
+  border-bottom: 1px solid #BB94A9;
 }
 td.subpanel {
   text-align: left;
@@ -421,7 +475,7 @@ td.panel-board {
 td.cstate {
   text-align: center;
   color: #0A246A;
-  width: 65px;
+  width: 80px;
 }
 td.cinfo {
   text-align: right;
@@ -433,10 +487,16 @@ td.cinfo {
   animation: slideInBottom 400ms forwards;
 }
 #newboard LI {
+  border: 1px solid transparent;
   list-style-type: none;
 }
 #newboard LI:hover {
-  background-color: #E95420;
+  border-bottom: 1px solid #804731;
+  border-left: 1px solid #DA754C;
+  border-top: 1px solid #F49169;
+  border-right: 1px solid #D36F46;
+  background-color: #EF7646;
+  color: #E6E3DC;
 }
 
 #totoz-panel {
@@ -445,7 +505,9 @@ td.cinfo {
 #totoz-list {
 }
 #totoz-list TR:hover {
-  background-color: #F08763;
+  background-color: #EF7646;
 }
 #totoz-list TD {
+  margin: 0;
+  padding: 1px;
 }
