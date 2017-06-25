@@ -4,7 +4,7 @@
 
 @import url("base.css");
 @import url("bottomtabs-layout.css");
-@import url("console-pinni-dark.css");
+@import url("console-pinni-light.css");
 
 html, body {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -201,7 +201,7 @@ input, select {
 
 /* Le palmipede et ses champs de saisie */
 #palmipede {
-  background-color: #002B36;
+  background-color: #fdf6e3;
   z-index: 10;
 }
 #post-form {
@@ -220,10 +220,10 @@ input, select {
   left: 50px;
   border: none;
   font-family: "Ubuntu Mono", "DejaVu Sans Mono", "Consolas",  "Lucida console", "Courier new", monospace;
-  background: url(img/consoleprompt.png) no-repeat 0px 5px, url(img/consoletilde.png) no-repeat center right;
-  background-color: #002B36;
+  background: url(img/consoleprompt-light.png) no-repeat 0px 5px, url(img/consoletilde-light.png) no-repeat center right;
+  background-color: #fdf6e3;
   padding: 1px 15px 1px 43px;
-  color: #FFB86C;
+  color: #2AA198;
   -moz-appearance: none;
   -webkit-appearance: none;
   z-index: 15;
@@ -235,15 +235,15 @@ input, select {
   border: none;
   margin: 0;
   padding: 7px 5px 8px 175px;
-  background-image: url(img/console-bg-form.png)!important;
+  background-image: url(img/console-bg-form-light.png)!important;
   background-position: top left!important;
   background-repeat: repeat-y!important;
-  color: #EEE8D5;
+  color: #586e75;
   font-family: "Ubuntu Mono", "DejaVu Sans Mono", "Consolas",  "Lucida console", "Courier new", monospace;
   z-index: 12;
 }
 #palmi-message::placeholder {
-  color: #002B36;
+  color: #fdf6e3;
 }
 
 /* Panneaux / boites de dialogue */

@@ -396,7 +396,7 @@ function addOptionLine(opt, subpanel) {
             tab = [BOSSMODE_RANDOM, BOSSMODE_PTRAMO, BOSSMODE_KERVIEL, BOSSMODE_PBPG, BOSSMODE_DECIDEUR]
             break;
           case 'style':
-            tab = ['console', 'default', 'lefttabs', 'sfw', 'golcc', 'oldolcc'];
+            tab = ['console', 'default', 'console-light', 'lefttabs', 'sfw', 'golcc', 'oldolcc'];
             break;
           case 'balltrap_mode':
             tab = [BALLTRAP_ONCLICK, BALLTRAP_AUTO, BALLTRAP_KILL];

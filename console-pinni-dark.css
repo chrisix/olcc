@@ -1,0 +1,143 @@
+/********************************************
+ * Styles du pinnipede pour le thème Console
+ * Version Dark de la palette Solarized
+ ********************************************/
+
+/* Pinipede et styles des posts */
+#pinnipede {
+  font-family: "Ubuntu Mono", "DejaVu Sans Mono", "Consolas",  "Lucida console", "Courier new", monospace;
+  background-color: #002B36;
+  color: #93A1A1;
+  padding: 0px 0px 3px 0px;
+  border: none;
+  border-top: 4px solid #E6E3DC;
+  border-radius: 4px 4px 0 0;
+  font-size: small;
+}
+#pinnipede DIV {
+  border-left: 4px solid transparent;
+}
+#popup {
+  font-family: "Ubuntu Mono", "DejaVu Sans Mono", "Consolas",  "Lucida console", "Courier new", monospace;
+}
+
+#zoombox {
+  color: #EEE8D5;
+}
+
+a {
+  text-decoration: none;
+  /* font-weight: bold; */
+  color: #2AA198;
+}
+a:visited {
+  /* font-weight: normal!important; */
+  color: #1E7C69;
+}
+a:link, a:focus, a:active {
+  color: #2AA198;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.totoz {
+  color: #859900;
+}
+.totoz:hover {
+  text-decoration: underline;
+}
+
+DIV.post {
+  margin-left: 10px;
+  padding: 0px 4px 0px 5px;
+  background-color: #002B36!important;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent; 
+}
+SPAN.clock {
+  color: #EEE8D5;
+  /* font-weight: bold; */
+}
+.clockref {
+  color: #268BD2;
+  border: 1px solid transparent;
+}
+SPAN.login, SPAN.ua {
+  display: inline-block;
+  vertical-align: bottom;  
+  width: 120px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+SPAN.login {
+  color: #CB4B16;
+}
+SPAN.ua {
+  color: #B58900;
+}
+/* .message:before {
+  content: "- ";
+} */
+/*
+SPAN.ua:after, SPAN.login:after {
+  content: ">";
+} */
+
+DIV.newpost{
+  border-left: 4px solid #E95420!important;
+}
+
+CODE, TT {
+  font-family: "Ubuntu Mono", "DejaVu Sans Mono", "Consolas",  "Lucida console", "Courier new", monospace;
+  white-space: pre;
+  color: #D33682;
+}
+
+SPAN.bigorno {
+  color: #FFB86C;
+  /* font-weight: bold; */
+}
+DIV.bigorno DIV SPAN.clock {
+  color: #FFB86C;
+}
+
+SPAN.canard {
+  /* font-weight: bold; */
+  color: #6C71C4;
+}
+
+DIV.answer DIV SPAN.clock {
+  color: #268BD2;
+}
+
+DIV.mypost DIV SPAN.login, DIV.mypost DIV SPAN.ua {
+  /* font-weight: bold; */
+}  
+SPAN.mypost {
+  color: #DC322F!important;
+  /* font-weight: bold; */
+}
+
+#popup DIV {
+  padding: 1px 1px 1px 5px;
+}
+.hilight DIV, #popup DIV DIV {
+  background-color: #FDF6E3!important; 
+  color: #073642!important;
+}
+.hilight DIV SPAN.clock, #popup DIV SPAN.clock {
+  color: #002B36;
+}
+.hilight.clockref {
+  background-color: #FDF6E3!important; 
+  color: #268BD2!important;
+}
+
+.plonk, .plonk SPAN {
+  color: #586E75!important;
+}
+.plonk .post {
+  background-color: #073642!important;
+}
