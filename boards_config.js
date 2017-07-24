@@ -131,9 +131,15 @@ lo.alias = "lo,lordoric";
 lo.slip = SLIP_TAGS_RAW; // Protection temporaire
 GlobalBoards['comptoir'] = lo;
 
+var oldgabu = new Board('oldgabuzomeu', false);
+oldgabu.getUrl = 'http://gabuzomeu.fr/tribune.xml';
+oldgabu.postUrl = 'http://gabuzomeu.fr/tribune/post';
+oldgabu.color = '#aaffbb';
+oldgabu.slip = SLIP_TAGS_RAW;
+GlobalBoards['oldgabuzomeu'] = oldgabu;
+
 var gabu = new Board('gabuzomeu', false);
-gabu.getUrl = 'http://gabuzomeu.fr/tribune.xml';
-gabu.postUrl = 'http://gabuzomeu.fr/tribune/post';
+gabu.getUrl = 'https://jb3.plop.cc/legacy/xml';
+gabu.postUrl = 'https://jb3.plop.cc/legacy/post';
 gabu.color = '#aaffbb';
-gabu.slip = SLIP_TAGS_RAW;
 GlobalBoards['gabuzomeu'] = gabu;
