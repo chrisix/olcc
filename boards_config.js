@@ -143,3 +143,11 @@ gabu.getUrl = 'https://jb3.plop.cc/legacy/xml';
 gabu.postUrl = 'https://jb3.plop.cc/legacy/post';
 gabu.color = '#aaffbb';
 GlobalBoards['gabuzomeu'] = gabu;
+
+var fork = new Board('fork', false);
+fork.getUrl = 'https://board.bombefourchette.com/data/backend.xml';
+fork.postUrl = 'https://board.bombefourchette.com/add.php';
+fork.alias = "forkbomb,bombefourchette,forkfaab";
+fork.color = '#FFAEB9';
+fork.slip = SLIP_TAGS_RAW;
+GlobalBoards['fork'] = fork;
