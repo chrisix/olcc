@@ -48,12 +48,12 @@ moules.color = '#ffe3c9';
 moules.slip = SLIP_TAGS_RAW;
 GlobalBoards['moules'] = moules;
 
-var bouchot = new Board('bouchot', false);
-bouchot.getUrl = 'http://bouchot.org/tribune/remote?last=%i';
-bouchot.postUrl = 'http://bouchot.org/tribune/post_coincoin';
-bouchot.postData = "missive=%m";
-bouchot.color = '#e9e9e9';
-GlobalBoards['bouchot'] = bouchot;
+// var bouchot = new Board('bouchot', false);
+// bouchot.getUrl = 'http://bouchot.org/tribune/remote?last=%i';
+// bouchot.postUrl = 'http://bouchot.org/tribune/post_coincoin';
+// bouchot.postData = "missive=%m";
+// bouchot.color = '#e9e9e9';
+// GlobalBoards['bouchot'] = bouchot;
 
 var finss = new Board('finss', false);
 finss.getUrl = 'http://finss.fr/drupal/node/95/xml';
@@ -77,19 +77,19 @@ devnewton.postUrl = 'https://b3.bci.im/legacy/post';
 devnewton.color = '#F5D6CC';
 GlobalBoards['devnewton'] = devnewton;
 
-var tif = new Board('tifauv', false);
-tif.getUrl = 'http://tribune.tifauv.homeip.net/tribune/remote?last=%i';
-tif.postUrl = 'http://tribune.tifauv.homeip.net/tribune/post_coincoin';
-tif.postData = "missive=%m";
-tif.alias = "tif";
-tif.color = '#a9f9b9';
-GlobalBoards['tifauv'] = tif;
+// var tif = new Board('tifauv', false);
+// tif.getUrl = 'http://tribune.tifauv.homeip.net/tribune/remote?last=%i';
+// tif.postUrl = 'http://tribune.tifauv.homeip.net/tribune/post_coincoin';
+// tif.postData = "missive=%m";
+// tif.alias = "tif";
+// tif.color = '#a9f9b9';
+// GlobalBoards['tifauv'] = tif;
 
 var olo = new Board('olo', false);
 olo.getUrl = 'http://board.olivierl.org/remote.xml';
 olo.postUrl = 'http://board.olivierl.org/add.php';
 olo.color = '#80dafc';
-olo.alias = "olivierl,breizh";
+olo.alias = "olivierl,breizh,h5n1";
 olo.slip = SLIP_TAGS_RAW;
 GlobalBoards['olo'] = olo;
 
@@ -100,28 +100,28 @@ ygllo.color = '#eee887';
 ygllo.alias = "yg,llo,fdg";
 GlobalBoards['ygllo'] = ygllo;
 
-var kad = new Board('kadreg', false);
-kad.getUrl = 'http://kadreg.org/board/backend.php';
-kad.postUrl = 'http://kadreg.org/board/add.php';
-kad.color = '#dae6e6';
-kad.alias = "kad,rincevent";
-kad.slip = SLIP_TAGS_RAW;
-GlobalBoards['kadreg'] = kad;
+// var kad = new Board('kadreg', false);
+// kad.getUrl = 'http://kadreg.org/board/backend.php';
+// kad.postUrl = 'http://kadreg.org/board/add.php';
+// kad.color = '#dae6e6';
+// kad.alias = "kad,rincevent";
+// kad.slip = SLIP_TAGS_RAW;
+// GlobalBoards['kadreg'] = kad;
 
-var dae = new Board('darkside', false);
-dae.getUrl = 'http://quadaemon.free.fr/remote.xml';
-dae.postUrl = 'http://quadaemon.free.fr/add.php';
-dae.color = '#daedae';
-dae.alias = "dae,daemon";
-dae.slip = SLIP_TAGS_RAW; // Protection temporaire
-GlobalBoards['darkside'] = dae;
+// var dae = new Board('darkside', false);
+// dae.getUrl = 'http://quadaemon.free.fr/remote.xml';
+// dae.postUrl = 'http://quadaemon.free.fr/add.php';
+// dae.color = '#daedae';
+// dae.alias = "dae,daemon";
+// dae.slip = SLIP_TAGS_RAW; // Protection temporaire
+// GlobalBoards['darkside'] = dae;
 
-var axel = new Board('hadoken', false);
-axel.getUrl = 'http://hadoken.free.fr/board/remote.php';
-axel.postUrl = 'http://hadoken.free.fr/board/post.php';
-axel.color = '#77AADD';
-axel.alias = "axel,waf";
-GlobalBoards['hadoken'] = axel;
+// var axel = new Board('hadoken', false);
+// axel.getUrl = 'http://hadoken.free.fr/board/remote.php';
+// axel.postUrl = 'http://hadoken.free.fr/board/post.php';
+// axel.color = '#77AADD';
+// axel.alias = "axel,waf";
+// GlobalBoards['hadoken'] = axel;
 
 var lo = new Board('comptoir', false);
 lo.getUrl = 'http://lordoric.free.fr/daBoard/remote.xml';
@@ -131,12 +131,12 @@ lo.alias = "lo,lordoric";
 lo.slip = SLIP_TAGS_RAW; // Protection temporaire
 GlobalBoards['comptoir'] = lo;
 
-var oldgabu = new Board('oldgabuzomeu', false);
-oldgabu.getUrl = 'http://gabuzomeu.fr/tribune.xml';
-oldgabu.postUrl = 'http://gabuzomeu.fr/tribune/post';
-oldgabu.color = '#aaffbb';
-oldgabu.slip = SLIP_TAGS_RAW;
-GlobalBoards['oldgabuzomeu'] = oldgabu;
+// var oldgabu = new Board('oldgabuzomeu', false);
+// oldgabu.getUrl = 'http://gabuzomeu.fr/tribune.xml';
+// oldgabu.postUrl = 'http://gabuzomeu.fr/tribune/post';
+// oldgabu.color = '#aaffbb';
+// oldgabu.slip = SLIP_TAGS_RAW;
+// GlobalBoards['oldgabuzomeu'] = oldgabu;
 
 var gabu = new Board('gabuzomeu', false);
 gabu.getUrl = 'https://jb3.plop.cc/legacy/xml';
@@ -151,3 +151,19 @@ fork.alias = "forkbomb,bombefourchette,forkfaab";
 fork.color = '#FFAEB9';
 fork.slip = SLIP_TAGS_RAW;
 GlobalBoards['fork'] = fork;
+
+var saufca = new Board('saufca', false);
+saufca.getUrl = 'https://sauf.ca/feeds/all.xml';
+saufca.postUrl = 'https://sauf.ca/post';
+saufca.color = '#AAAAAA';
+saufca.alias = 'sauf,bloub';
+saufca.slip = SLIP_TAGS_RAW;
+GlobalBoards['saufca'] = saufca;
+
+var ototu = new Board('ototu', false);
+ototu.getUrl = 'https://ototu.euromussels.eu/goboard/backend/xml';
+ototu.postUrl = 'https://ototu.euromussels.eu/goboard/post';
+ototu.color = '#014C8C';
+ototu.alias = 'goboard,dguihal';
+GlobalBoards['ototu'] = ototu;
+
