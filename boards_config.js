@@ -4,8 +4,8 @@
  ************************************************************/
 
 var dlfp = new Board('dlfp', false);
-dlfp.getUrl = 'http://linuxfr.org/board/index.xml';
-dlfp.postUrl = 'http://linuxfr.org/board';
+dlfp.getUrl = 'https://linuxfr.org/board/index.xml';
+dlfp.postUrl = 'https://linuxfr.org/board';
 dlfp.postData = "board[message]=%m";
 dlfp.alias = "linuxfr,beyrouth,passite,dapassite";
 dlfp.cookie = 'linuxfr.org_session=';
