@@ -117,7 +117,12 @@ var settings = {
         this.options[name].value = val;
     },
     value: function (name) {
-        return this.options[name].value;
+        var value = this.options[name].value;
+
+        if (name == 'totoz_server' && value[value.length-1] != '/')
+            value += '/'
+
+        return value;
     },
     save: function () {
         var tab = new Array();
