@@ -148,7 +148,7 @@ function writeTotoz(message) {
     if (settings.value('totoz_mode') != TOTOZ_INLINE) {
         return message.replace(exp, '<span class="totoz" id="$1">[:$1]</span>');
     } else {
-        return message.replace(exp, '<img title="[:$1]" src="' + settings.value('totoz_server') + '/img/$1" />');
+        return message.replace(exp, '<img title="[:$1]" src="' + settings.value('totoz_server') + 'img/$1" />');
     }
 }
 
@@ -598,7 +598,7 @@ function getTotoz(totoz) {
     if (!img) {
         img = document.createElement('img');
         img.style.display = 'none';
-        img.setAttribute('src', settings.value('totoz_server') + '/img/' + totoz);
+        img.setAttribute('src', settings.value('totoz_server') + 'img/' + totoz);
         img.className = 'totoz'; // setAttribute('class','totoz');
         img.setAttribute('id','totozImg[' + totoz + ']');
         document.getElementsByTagName('body')[0].appendChild(img);
@@ -1262,9 +1262,9 @@ function searchTotoz() {
     var totoz = document.getElementById('totoz-search').value;
     if (!totoz) { return; }
     document.getElementById('totoz-status').src = "img/wait.gif";
-    var url = settings.value('totoz_server') + "search.xml{question}terms=" + escape(totoz); // + "{amp}xml=true";
+    var url = settings.value('totoz_server') + "search.xml?terms=" + encodeURI(totoz);
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'backend.php?url='+url, true);
+    xhr.open('GET', url, true);
     xhr.onreadystatechange = function() {
         switch (xhr.readyState) {
           case 4:
@@ -1312,7 +1312,7 @@ function displayTotoz(xhr) {
             var tr = document.createElement('tr');
             tr.setAttribute('onclick', 'insertInPalmi("'+totoz+" "+'")');
             var td = document.createElement('td');
-            td.innerHTML = '<img src="'+server+'/img/'+curtotoz+'" alt="'+totoz+'" />';
+            td.innerHTML = '<img src="'+server+'img/'+curtotoz+'" alt="'+totoz+'" />';
             tr.appendChild(td);
             td = document.createElement('td');
             td.innerHTML = '<span class="totoz">'+totoz+'</span>';
