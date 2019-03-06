@@ -72,8 +72,8 @@ shoop.slip = SLIP_TAGS_RAW;
 GlobalBoards['shoop'] = shoop;
 
 var devnewton = new Board('devnewton', false);
-devnewton.getUrl = 'http://b3.bci.im/legacy/xml';
-devnewton.postUrl = 'http://b3.bci.im/legacy/post';
+devnewton.getUrl = 'https://jb3.devnewton.fr/legacy/xml';
+devnewton.postUrl = 'https://jb3.devnewton.fr/legacy/post';
 devnewton.color = '#F5D6CC';
 GlobalBoards['devnewton'] = devnewton;
 
